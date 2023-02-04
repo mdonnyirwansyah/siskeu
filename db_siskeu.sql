@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 04 Feb 2021 pada 19.44
--- Versi server: 10.4.6-MariaDB
--- Versi PHP: 7.3.9
+-- Host: localhost
+-- Generation Time: Feb 05, 2023 at 12:06 AM
+-- Server version: 10.3.37-MariaDB-0ubuntu0.20.04.1
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pembayaranspbj`
+-- Table structure for table `tb_pembayaranspbj`
 --
 
 CREATE TABLE `tb_pembayaranspbj` (
@@ -39,23 +38,12 @@ CREATE TABLE `tb_pembayaranspbj` (
   `pengiriman` int(50) NOT NULL,
   `keterangan` varchar(256) NOT NULL,
   `bukti_transaksi` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data untuk tabel `tb_pembayaranspbj`
---
-
-INSERT INTO `tb_pembayaranspbj` (`kode`, `tanggal`, `penerima`, `no_spbj`, `area`, `nilai_spbj`, `pemasukkan`, `pengiriman`, `keterangan`, `bukti_transaksi`) VALUES
-(1, '2021-01-01 00:00:00', 'Izan', 'SP333902345AJ', 'Pekanbaru', 150000000, 100000000, 35000000, 'Cash', 'struk.png'),
-(2, '2021-01-06 00:00:00', 'Izan', 'SP333902346AJ', 'Kampar', 150000000, 100000000, 35000000, 'Cash', 'struk.png'),
-(3, '2021-01-15 00:00:00', 'Izan', 'SP333902347AJ', 'Inhil', 150000000, 100000000, 35000000, 'Cash', 'struk.png'),
-(4, '2021-01-22 00:00:00', 'Izan', 'SP333902348AJ', 'Inhu', 150000000, 100000000, 35000000, 'Cash', 'struk.png'),
-(5, '2021-01-30 00:00:00', 'Izan', 'SP333902349AJ', 'Dumai', 150000000, 100000000, 35000000, 'Cash', 'struk.png');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pengeluaranbos`
+-- Table structure for table `tb_pengeluaranbos`
 --
 
 CREATE TABLE `tb_pengeluaranbos` (
@@ -68,191 +56,12 @@ CREATE TABLE `tb_pengeluaranbos` (
   `volume` int(50) NOT NULL,
   `keterangan` varchar(256) NOT NULL,
   `bukti_transaksi` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data untuk tabel `tb_pengeluaranbos`
---
-
-INSERT INTO `tb_pengeluaranbos` (`kode`, `tanggal`, `uraian`, `penerima`, `kebutuhan`, `satuan`, `volume`, `keterangan`, `bukti_transaksi`) VALUES
-(1, '2021-01-01 00:00:00', 'Pengiriman Uang', 'Karmila', 'Kirim Uang Untuk Pekerjaan Selat Panjang', 100000000, 1, 'Cek Kwitansi', 'struk.png'),
-(2, '2021-01-01 00:00:00', 'Biaya Adm', 'Izan', 'Biaya Adm Bank Pengiriman Dan Penarikan Uang + Parkir X 2', 32000, 1, 'Cach', 'struk.png'),
-(3, '2021-01-01 00:00:00', 'Beli Materai', 'Izan', 'Beli Materai 6000 Se Papan', 300000, 1, 'Cash', 'struk.png'),
-(4, '2021-01-01 00:00:00', 'Beli Makan', 'Izan', 'Beli Makan Anggota', 20000, 1, 'Cash', 'struk.png'),
-(5, '2021-01-01 00:00:00', 'Beli Kue', 'Izan', 'Beli Kue Untuk Dikantor', 50000, 1, 'Cash', 'struk.png'),
-(6, '2021-01-01 00:00:00', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Untuk DL Di Tembilahan', 3500000, 1, 'Via M-banking', 'struk.png'),
-(7, '2021-01-01 00:00:00', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 2000000, 1, 'Via M-banking', 'struk.png'),
-(8, '2021-01-01 00:00:00', 'Pengiriman Uang', 'Madi', 'Kirim Uang Untuk Ke Gembira Dengan Rincian Pinjaman Ada Di Wa Izan', 9006500, 1, 'Via M-banking', 'struk.png'),
-(9, '2021-01-01 00:00:00', 'Pemberian Uang', 'Helpiati', 'Pemberian Uang Angsur Hutang Bos', 5000000, 1, 'Cash', 'struk.png'),
-(10, '2021-01-01 00:00:00', 'Belanja Kantor', 'Izan', 'Belanja Makanan Untuk Dikantor', 122500, 1, 'Cek Nota', 'struk.png'),
-(11, '2021-01-02 00:00:00', 'Pengiriman Uang', 'Rio Novingki', 'Ongkos Untuk Jemput Barang Di PLN Rengat', 806500, 1, 'Via M-banking', 'struk.png'),
-(12, '2021-01-02 00:00:00', 'Pengiriman Uang', 'Alwis', 'Kirim Uang Untuk Bayar Hutang Bos Ke Rusdi Karim', 18006500, 1, 'Via M-banking', 'struk.png'),
-(13, '2021-01-02 00:00:00', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Bos', 78000, 1, 'Via M-banking', 'struk.png'),
-(14, '2021-01-02 00:00:00', 'Pengiriman Uang', 'Afrida', 'Kirim Uang Untuk Pembayaran Beli Material', 15000000, 1, 'Via M-banking', 'struk.png'),
-(15, '2021-01-02 00:00:00', 'Pengiriman Uang', 'Sasni', 'Kirim Uang Untuk .....', 2006500, 1, 'Via M-banking', 'struk.png'),
-(16, '2021-01-02 00:00:00', 'Pengiriman Uang', 'Sofia Dinata', 'Kirim Uang Untuk Angsuran Hutang Bos', 3000000, 1, 'Via M-banking', 'struk.png'),
-(17, '2021-01-03 00:00:00', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Tambahan Untuk DL Di Tembilahan', 3000000, 1, 'Via M-banking', 'struk.png'),
-(18, '2021-01-03 00:00:00', 'Pengiriman Uang', 'Sugiman', 'Kirim Uang Pinjaman Pekerjaan Mahato Jhon', 10006500, 1, 'Via M-banking', 'struk.png'),
-(19, '2021-01-03 00:00:00', 'Pinjaman Uang', 'Ambik', 'Pinjaman Uang Untuk Pekerjaan Taluk Pada Tgl 02-04', 6000000, 1, 'Cek Kwitansi', 'struk.png'),
-(20, '2021-01-03 00:00:00', 'Biaya Adm', 'Izan', 'Biaya Adm Penarikan Uang Pada Tgl 02-04 + Parkir', 12000, 1, 'Cash', 'struk.png'),
-(21, '2021-01-03 00:00:00', 'Beli Tisu', 'Izan', 'Beli Tisu Untuk Dikantor', 40000, 1, 'Cash', 'struk.png'),
-(22, '2021-01-03 00:00:00', 'Belanja Kantor', 'Izan', 'Beli Atk Kantor', 41000, 1, 'Cek Nota', 'struk.png'),
-(23, '2021-01-03 00:00:00', 'Beli Map', 'Izan', 'Beli Map Dan Tinta Pena Untuk Bos', 15000, 1, 'Cash', 'struk.png'),
-(24, '2021-01-03 00:00:00', 'Pengiriman Uang', 'Heni', 'Kirim Uang Ke Anak Bos', 102500, 1, 'Via Ovo Izan', 'struk.png'),
-(25, '2021-01-03 00:00:00', 'Pengiriman Uang', 'Rio Novingki', 'Kirim Uang Untuk .....', 1056500, 1, 'Via M-banking', 'struk.png'),
-(26, '2021-01-03 00:00:00', 'Pengiriman Uang', 'Safri', 'Kirim Uang Untuk Angsur Hutang Bos', 5006500, 1, 'Via M-banking', 'struk.png'),
-(27, '2021-01-03 00:00:00', 'Pengiriman Uang', 'Mita Julia', 'Kirim Uang Untuk Heni', 106500, 1, 'Via M-banking', 'struk.png'),
-(28, '2021-01-04 00:00:00', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk .....', 806500, 1, 'Via M-banking', 'struk.png'),
-(29, '2021-01-04 00:00:00', 'Pengiriman Uang', 'Nova Nurhaliza', 'Kirim Uang Untuk .....', 156500, 1, 'Via M-banking', 'struk.png'),
-(30, '2021-01-04 00:00:00', 'Bayar Hutang Kedai', 'Izan', 'Bayar Hutang Kedai Depan 5 Hari', 203000, 1, 'Cash', 'struk.png'),
-(31, '2021-01-04 00:00:00', 'Beli Aqua Gelas', 'Izan', 'Beli Aqua Gelas Dan Rokok Bg Siam', 40000, 1, 'Cash', 'struk.png'),
-(32, '2021-01-05 00:00:00', 'Pengisian Token', 'Pak Bos', 'Isi Token Bos', 52500, 1, 'Via M-banking', 'struk.png'),
-(33, '2021-01-06 00:00:00', 'Pengisian Token', 'Izan', 'Isi Token Kantor', 22000, 1, 'Cash', 'struk.png'),
-(34, '2021-01-06 00:00:00', 'Pengisian Token', 'Izan', 'Tambah Isi Token Kantor', 203000, 1, 'Cash', 'struk.png'),
-(35, '2021-01-06 00:00:00', 'Parkir Bank', 'Izan', 'Uangnya Dikasih Ke Bg Siam', 5000, 1, 'Cash', 'struk.png'),
-(36, '2021-01-06 00:00:00', 'Pengsian Token', 'Pak Bos', 'Isi Token Rumah Bos', 503000, 1, 'Cash', 'struk.png'),
-(37, '2021-01-06 00:00:00', 'Pengiriman Uang', 'Suhermanto', 'Kirim Uang Untuk Pembelian Material Di Istana Baut', 5006500, 1, 'Via M-banking', 'struk.png'),
-(38, '2021-01-07 00:00:00', 'Pengiriman Uang', 'Alwis', 'Kirim Uang Untuk Pinjaman Pribadi', 12006500, 1, 'Via M-banking', 'struk.png'),
-(39, '2021-01-07 00:00:00', 'Pengiriman Uang', 'Helman', 'Kirim Uang Untuk Nanang Di Concong', 15000000, 1, 'Via M-banking', 'struk.png'),
-(40, '2021-01-07 00:00:00', 'Pengiriman Uang', 'Andreas', 'Kirim Uang Untuk Beli Material', 1852000, 1, 'Via M-banking', 'struk.png'),
-(41, '2021-01-07 00:00:00', 'Pemberian Uang', 'Andreas', 'Beli Material Yang Lain', 30000000, 1, 'Cek Nota', 'struk.png'),
-(42, '2021-01-07 00:00:00', 'Belanja Denok', 'Denok', 'Belanja Istri Bos', 400000, 1, 'Cash', 'struk.png'),
-(43, '2021-01-07 00:00:00', 'Beli Gas', 'Si Im', 'Beli Gas Untuk Rumah Bos', 100000, 1, 'Cash', 'struk.png'),
-(44, '2021-01-07 00:00:00', 'Pemberian Uang', 'Fery', 'DL Ke Dumai Dengan Bg Siam', 1500000, 1, 'Cash', 'struk.png'),
-(45, '2021-01-07 00:00:00', 'Upah Bongkar', 'Izan', 'Upah Bongkar Barang Dari Sinar Lestari', 200000, 1, 'Cash', 'struk.png'),
-(46, '2021-01-07 00:00:00', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Nelfon Bos', 65000, 1, 'Cash', 'struk.png'),
-(47, '2021-01-07 00:00:00', 'Gaji Karyawan', 'Izan', 'Gaji Karyawan Bulan Maret', 20022000, 1, 'Cash', 'struk.png'),
-(48, '2021-01-07 00:00:00', 'Ongkos Travel', 'Izan', 'Ongkos Travel Berkas Ke Rengat', 25000, 1, 'Cash', 'struk.png'),
-(49, '2021-01-07 00:00:00', 'Pengisian Pulsa', 'Izan', 'Pulsa Izan Bulan April', 52000, 1, 'Cash', 'struk.png'),
-(50, '2021-01-08 00:00:00', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk Ipat Sebagai Pinjaman', 3006500, 1, 'Via M-banking', 'struk.png'),
-(51, '2021-01-08 00:00:00', 'Pengiriman Uang', 'Helman', 'Kirim Uang Untuk .. (nanang)', 3000000, 1, 'Via M-banking', 'struk.png'),
-(52, '2021-01-08 00:00:00', 'Pengiriman Uang', 'Sri Wahyuningsih', 'Kirim Uang Untuk Ongkos Berangkat Anggota Ke Concong', 10006500, 1, 'Via M-banking', 'struk.png'),
-(53, '2021-01-08 00:00:00', 'Pengisian Pulsa', 'Fery', 'Pulsa Fery Bulan April', 52000, 1, 'Cash', 'struk.png'),
-(54, '2021-01-08 00:00:00', 'Pengiriman Uang', 'Riko', 'Kirim Uang Riko Yang Disetor Ke Bos', 606500, 1, 'Via M-banking', 'struk.png'),
-(55, '2021-01-09 00:00:00', 'Uang DL', 'Izan', 'Uang DL Izan Ke Taluk 2 Hari', 1070000, 1, 'Cek Kwitansi', 'struk.png'),
-(56, '2021-01-09 00:00:00', 'Pengiriman Uang', 'Fery', 'Kirim Uang Tambahan Untuk DL Di Dumai', 506500, 1, 'Via M-banking', 'struk.png'),
-(57, '2021-01-09 00:00:00', 'Beli Kue', 'Pak Bos', 'Beli Kue Di Vanholland Pakai Debit Kartu Atm', 117040, 1, 'Via Debet Atm', 'struk.png'),
-(58, '2021-01-09 00:00:00', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 500000, 1, 'Cash', 'struk.png'),
-(59, '2021-01-10 00:00:00', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 500000, 1, 'Cash', 'struk.png'),
-(60, '2021-01-10 00:00:00', 'Pengiriman Uang', 'Helman (nanang)', 'Kirim Uang Untuk Nanang Di Concong', 5500000, 1, 'Via M-banking', 'struk.png'),
-(61, '2021-01-10 00:00:00', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 1000000, 1, 'Cash', 'struk.png'),
-(62, '2021-01-10 00:00:00', 'Pengiriman Uang', 'Fery', 'Kirim Uang Tambahan Untuk DL Di Dumai', 1006500, 1, 'Via M-banking', 'struk.png'),
-(63, '2021-01-10 00:00:00', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 5000000, 1, 'Cash', 'struk.png'),
-(64, '2021-01-10 00:00:00', 'Pengiriman Uang', 'Roni Suprianto', 'Kirim Uang Untuk Satpam Perumahan Bos', 256500, 1, 'Via M-banking', 'struk.png'),
-(65, '2021-01-11 00:00:00', 'Belanja Kantor', 'Izan', 'Belanja Energen, Kopi Dan Lainnya', 50000, 1, 'Cash', 'struk.png'),
-(66, '2021-01-11 00:00:00', 'Makan Lembur', 'Izan', 'Makan Lembur Karyawan Dengan Bg Siam', 30000, 1, 'Cash', 'struk.png'),
-(67, '2021-01-11 00:00:00', 'Belanja Denok', 'Denok', 'Belanja Denok Dipasar Buah', 392000, 1, 'Cek Nota', 'struk.png'),
-(68, '2021-01-11 00:00:00', 'Pemberian Uang', 'Pak Bos', 'Beri Uang Ke Bos', 600000, 1, 'Cash', 'struk.png'),
-(69, '2021-01-11 00:00:00', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Bos', 151500, 1, 'Via M-banking', 'struk.png'),
-(70, '2021-01-11 00:00:00', 'Pengiriman Uang', 'Nur Imran', 'Kirim Uang Untuk Antar Orang Ke Concong', 2006500, 1, 'Via M-banking', 'struk.png'),
-(71, '2021-01-11 00:00:00', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Bos', 78000, 1, 'Via M-banking', 'struk.png'),
-(72, '2021-01-11 00:00:00', 'Pengiriman Uang', 'Alfatmi', 'Pinjaman Uang Untuk .....', 1506500, 1, 'Via M-banking', 'struk.png'),
-(73, '2021-01-11 00:00:00', 'Pengiriman Uang', 'Nur Imran', 'Tambahan Kirim Uang Untuk Di Concong', 506500, 1, 'Via M-banking', 'struk.png'),
-(74, '2021-01-11 00:00:00', 'Pengiriman Uang', 'Helman (nanang)', 'Kirim Uang Untuk Di Concong', 3000000, 1, 'Via M-banking', 'struk.png'),
-(75, '2021-01-11 00:00:00', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 1000000, 1, 'Cash', 'struk.png'),
-(76, '2021-01-11 00:00:00', 'Pengiriman Uang', 'Elysa Evanawi', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(77, '2021-01-12 00:00:00', 'Belanja Kantor', 'Izan', 'Belanja Kantor', 104000, 1, 'Cash', 'struk.png'),
-(78, '2021-01-12 00:00:00', 'Pengiriman Uang', 'Syafrizal', 'Kirim Uang Untuk Bayar Hutang Bos (masih Ragu)', 1006500, 1, 'Via M-banking', 'struk.png'),
-(79, '2021-01-12 00:00:00', 'Pengiriman Uang', 'Fery', 'Kirim Uang Untuk Tambahan DL Di Dumai', 306500, 1, 'Via M-banking', 'struk.png'),
-(80, '2021-01-12 00:00:00', 'Pengiriman Uang', 'Mariatun', 'Kirim Uang Untuk Pengeluaran Denok', 100000, 1, 'Via M-banking', 'struk.png'),
-(81, '2021-01-12 00:00:00', 'Pengiriman Uang', 'Pak Bos', 'Kirim Ke Rekening Bank Riau Bos', 1006500, 1, 'Via M-banking', 'struk.png'),
-(82, '2021-01-13 00:00:00', 'Bayar Wifi Bos', 'Izan', 'Bayar Wifi Rumah Bos', 350000, 1, 'Cek Nota', 'struk.png'),
-(83, '2021-01-13 00:00:00', 'Bayar Hutang Kedai', 'Izan', 'Bayar Hutang Kedai Depan 9 Hari', 330000, 1, 'Cash', 'struk.png'),
-(84, '2021-01-13 00:00:00', 'Pengiriman Uang', 'Nurhasyim', 'Kirim Uang Untuk ....', 506500, 1, 'Via M-banking', 'struk.png'),
-(85, '2021-01-13 00:00:00', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Untuk DL Ke Taluk', 1000000, 1, 'Via M-banking', 'struk.png'),
-(86, '2021-01-13 00:00:00', 'Pengiriman Uang', 'Nurhasyim', 'Kirim Uang Untuk ....', 506500, 1, 'Via M-banking', 'struk.png'),
-(87, '2021-01-13 00:00:00', 'Pengiriman Uang', 'Andreas', 'Kirim Uang Untuk Bayar Kekurangan Beli Material', 335000, 1, 'Via M-banking', 'struk.png'),
-(88, '2021-01-14 00:00:00', 'Minum Bos', 'Pak Bos', 'Minum Bos', 13000, 1, 'Cash1161500', 'struk.png'),
-(89, '2021-01-14 00:00:00', 'Beli Masker', 'Pak Bos', 'Beli Masker Untuk Bso', 65000, 1, 'Cash', 'struk.png'),
-(90, '2021-01-14 00:00:00', 'Pemberian Uang', 'Nur Imran', 'Bayar Kekurang Uang Beli Material Di Istana Baut', 10000, 1, 'Cash', 'struk.png'),
-(91, '2021-01-14 00:00:00', 'Biaya Adm', 'Izan', 'Bayar Hutang Biaya Adm Ke Bank Riau 25000 + 10000', 35000, 1, 'Cash', 'struk.png'),
-(92, '2021-01-14 00:00:00', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Untuk Nanang Di Concong', 506500, 1, 'Via M-banking', 'struk.png'),
-(93, '2021-01-14 00:00:00', 'Parkir Bank', 'Izan', 'Bayar Parkir Bank 2x', 2, 1, 'Cash', 'struk.png'),
-(94, '2021-01-14 00:00:00', 'Servis Mobil', 'Pak Bos', 'Servis Mobil Bos', 830000, 1, 'Via M-banking', 'struk.png'),
-(95, '2021-01-14 00:00:00', 'Ongkos Barang', 'Izan', 'Ongkos Mobil Antar Barang Ke Mahato 1,9jt, Dibayar 1jt, Sisanya Dari Bos', 1000000, 1, 'Cek Kwitansi', 'struk.png'),
-(96, '2021-01-14 00:00:00', 'Beli Paralon', 'Izan', 'Beli Paralon 2\"', 75000, 1, 'Cash', 'struk.png'),
-(97, '2021-01-14 00:00:00', 'Upah Muat', 'Ambik', 'Upah Muat Barang', 200000, 1, 'Cash', 'struk.png'),
-(98, '2021-01-14 00:00:00', 'Pengiriman Uang', 'Retno Hardiyanti', 'Kirim Uang Untuk ...', 7306500, 1, 'Via M-banking', 'struk.png'),
-(99, '2021-01-15 00:00:00', 'Pengiriman Uang', 'Sugiman', 'Pinjaman Uang Pekerjaan Bg Jon Dimahato', 7006500, 1, 'Via M-banking', 'struk.png'),
-(100, '2021-01-15 00:00:00', 'Pengiriman Uang', 'Sasni (ambik)', 'Bayar Hutang Makan Ambik Di Taluk + Uang Dari Bos 3jt', 4506500, 1, 'Via M-banking', 'struk.png'),
-(101, '2021-01-15 00:00:00', 'Beli Peyek', 'Izan', 'Beli Peyek Untuk Di Mobil Bos', 35000, 1, 'Cash', 'struk.png'),
-(102, '2021-01-16 00:00:00', 'Pemberian Uang', 'Pak Bos', 'Pemberian Uang Ke Bos', 5000000, 1, 'Cash', 'struk.png'),
-(103, '2021-01-16 00:00:00', 'Pengisian Token', 'Izan', 'Isi Token Kantor', 52000, 1, 'Cash', 'struk.png'),
-(104, '2021-01-16 00:00:00', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Untuk Nanang Di Concong', 2006500, 1, 'Via M-banking', 'struk.png'),
-(105, '2021-01-16 00:00:00', 'Pengiriman Uang', 'Rio Novingki', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(106, '2021-01-16 00:00:00', 'Pengiriman Uang', 'Radius', 'Kirim Uang Untuk ....', 2506500, 1, 'Via M-banking', 'struk.png'),
-(107, '2021-01-16 00:00:00', 'Pengiriman Uang', 'Hasnul Abdi', 'Kirim Uang Untuk Gaji Abdi', 756500, 1, 'Via M-banking', 'struk.png'),
-(108, '2021-01-16 00:00:00', 'Pengiriman Uang', 'Nur Imran', 'Kirim Uang Untuk Pinjaman Uang Sewa Rumah', 706500, 1, 'Via M-banking', 'struk.png'),
-(109, '2021-01-17 00:00:00', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(110, '2021-01-17 00:00:00', 'Pengiriman Uang', 'Sofia Dinata', 'Kirim Uang Untuk ....', 500000, 1, 'Via M-banking', 'struk.png'),
-(111, '2021-01-17 00:00:00', 'Pengiriman Uang', 'Cindy Amelia', 'Kirim Uang Untuk ....', 306500, 1, 'Via M-banking', 'struk.png'),
-(112, '2021-01-17 00:00:00', 'Biaya Adm', 'BCA', 'Biaya Adm Atm Otomatis', 20000, 1, 'Otomatis', 'struk.png'),
-(113, '2021-01-18 00:00:00', 'Pengiriman Uang', 'Andreas', 'Kirim Uang Untuk Bayar Material', 2335000, 1, 'Via M-banking', 'struk.png'),
-(114, '2021-01-18 00:00:00', 'Pengiriman Uang', 'Sasni', 'Pinjaman Uang Dialihkan Ke Pekerjaan Mahato', 1006500, 1, 'Via M-banking', 'struk.png'),
-(115, '2021-01-18 00:00:00', 'Pengiriman Uang', 'Toni Fikri', 'Kirim Uang Untuk Bayar Sorum Bg Siim, Sudah Dibayar Oleh Bg Si Im', 1000000, 1, 'Via M-banking', 'struk.png'),
-(116, '2021-01-18 00:00:00', 'Pengiriman Uang', 'Tri Andini', 'Kirim Uang Untuk ...', 1006500, 1, 'Via M-banking', 'struk.png'),
-(117, '2021-01-19 00:00:00', 'Pengiriman Uang', 'Madiono', 'Pinjaman Uang Pribadi', 4006500, 1, 'Via M-banking', 'struk.png'),
-(118, '2021-01-20 00:00:00', 'Pengisian Token', 'Izan', 'Isi Token Kantor', 203000, 1, 'Via M-banking', 'struk.png'),
-(119, '2021-01-20 00:00:00', 'Pembayaran Wifi', 'Izan', 'Bayar Wifi Kantor', 726000, 1, 'Cek Nota', 'struk.png'),
-(120, '2021-01-20 00:00:00', 'Belanja Kantor', 'Izan', 'Belanja Kantor Dan Beli Makan Kucing', 60000, 1, 'Cash', 'struk.png'),
-(121, '2021-01-20 00:00:00', 'Beli Galon', 'Izan', 'Beli Air Galon Untuk Kantor', 8000, 1, 'Cash', 'struk.png'),
-(122, '2021-01-20 00:00:00', 'Pengiriman Paket', 'Izan', 'Kirim Paket Berkas Ke Rengat', 25000, 1, 'Cek Nota', 'struk.png'),
-(123, '2021-01-21 00:00:00', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Ke Nanang Concong', 5006500, 1, 'Via M-banking', 'struk.png'),
-(124, '2021-01-21 00:00:00', 'Belanja Kantor', 'Izan', 'Belanja Kantor', 44000, 1, 'Cek Nota', 'struk.png'),
-(125, '2021-01-21 00:00:00', 'Admin Bank', 'Izan', 'Admin Bank Penarikan Uang + Parkir', 17000, 1, 'Cash', 'struk.png'),
-(126, '2021-01-21 00:00:00', 'Minum Bos', 'Izan', 'Beli Minum Bos Di Alfamart', 20000, 1, 'Cash', 'struk.png'),
-(127, '2021-01-21 00:00:00', 'Pengiriman Uang', 'Sugiman', 'Pinjaman Uang Bg Jon Untuk Pekerjaan Mahato', 15006500, 1, 'Via M-banking', 'struk.png'),
-(128, '2021-01-21 00:00:00', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 1006500, 1, 'Via M-banking', 'struk.png'),
-(129, '2021-01-21 00:00:00', 'Pengisian Token', 'Pak Bos', 'Isi Token Rumah Bos', 502500, 1, 'Via M-banking', 'struk.png'),
-(130, '2021-01-22 00:00:00', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ...', 1006500, 1, 'Via M-banking', 'struk.png'),
-(131, '2021-01-22 00:00:00', 'Pengiriman Uang', 'Saparrudin', 'Kirim Uang Untuk Pemberian Gudang PLN Dumai', 506500, 1, 'Via M-banking', 'struk.png'),
-(132, '2021-01-22 00:00:00', 'Pengiriman Uang', 'Nova Nurhaliza', 'Kirim Uang Untuk ...', 506500, 1, 'Via M-banking', 'struk.png'),
-(133, '2021-01-22 00:00:00', 'Belanja Kantor', 'Izan', 'Beli Energen, Aqua Gelas, Roti', 45000, 1, 'Cash', 'struk.png'),
-(134, '2021-01-23 00:00:00', 'Admin Bank', 'Izan', 'Admin Bank Penarikan Uang + Parkir', 12000, 1, 'Cash', 'struk.png'),
-(135, '2021-01-23 00:00:00', 'Pinjaman Uang', 'Nur Imran', 'Pinjaman Pribadi', 100000, 1, 'Cash', 'struk.png'),
-(136, '2021-01-23 00:00:00', 'Pinjaman Uang', 'Si Am', 'Pinjaman Pribadi', 50000, 1, 'Cash', 'struk.png'),
-(137, '2021-01-23 00:00:00', 'Pembayaran Fortuner', 'Pak Bos', 'Pembayaran Fortuner Via Debit Otomatis Atm', 4827400, 1, 'Via Debet Atm', 'struk.png'),
-(138, '2021-01-24 00:00:00', 'Pengiriman Uang', 'Sugiman', 'Kirim Uang Pinjaman Pekerjaan Mahato Jhon', 1006500, 1, 'Via M-banking', 'struk.png'),
-(139, '2021-01-24 00:00:00', 'Pengiriman Uang', 'Tri Andini', 'Kirim Uang Untuk ....', 356500, 1, 'Via M-banking', 'struk.png'),
-(140, '2021-01-24 00:00:00', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 1006500, 1, 'Via M-banking', 'struk.png'),
-(141, '2021-01-24 00:00:00', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 2006500, 1, 'Via M-banking', 'struk.png'),
-(142, '2021-01-24 00:00:00', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 506500, 1, 'Via M-banking', 'struk.png'),
-(143, '2021-01-25 00:00:00', 'Pengisian Token', 'Pak Bos', 'Isi Token Rumah Bos', 102500, 1, 'Via M-banking', 'struk.png'),
-(144, '2021-01-26 00:00:00', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 506500, 1, 'Via M-banking', 'struk.png'),
-(145, '2021-01-27 00:00:00', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Untuk Kerja Concong', 3006500, 1, 'Via M-banking', 'struk.png'),
-(146, '2021-01-27 00:00:00', 'Pengiriman Uang', 'Andreas', 'Bayar Hutang Material Di Sinar Lestari 27jt, 7jt Pakai Cek Bukopin', 20000000, 1, 'Via M-banking', 'struk.png'),
-(147, '2021-01-27 00:00:00', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(148, '2021-01-27 00:00:00', 'Pengiriman Uang', 'Adip', 'Pinjaman Uang Pribadi Pekerjaan Selat Panjang + Admin 3500', 5004500, 1, 'Via Ovo Izan', 'struk.png'),
-(149, '2021-01-27 00:00:00', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 506500, 1, 'Via M-banking', 'struk.png'),
-(150, '2021-01-27 00:00:00', 'Parkir Bank', 'Izan', 'Parkir Di 3  Bank + Sumbangan Bpk\"', 10000, 1, 'Cash', 'struk.png'),
-(151, '2021-01-27 00:00:00', 'Pengiriman Uang', 'Syafril', 'Bayar Hutang Bos Ke Pak Syafril + Admin Bank 5000', 15005000, 1, 'Via Transfer Bank', 'struk.png'),
-(152, '2021-01-27 00:00:00', 'Pengiriman Uang', 'Sukri', 'Bayar Sisa Kekurangan Bayar Tagihan Bos + Admin Bank 5000', 12005000, 1, 'Via Transfer Bank', 'struk.png'),
-(153, '2021-01-27 00:00:00', 'Bayar Hutang', 'Izan', 'Bayar Bon Beli Material Ditoko Intan', 1860000, 1, 'Cek Nota', 'struk.png'),
-(154, '2021-01-27 00:00:00', 'Pemberian Uang', 'Helviati', 'Pemberian Uang Pribadi', 1000000, 1, 'Cash', 'struk.png'),
-(155, '2021-01-27 00:00:00', 'Bayar Hutang Kedai', 'Izan', 'Bayar Hutang Kedai Depan', 100000, 1, 'Cash', 'struk.png'),
-(156, '2021-01-27 00:00:00', 'Bayara Hutang Kedai', 'Ambik', 'Bayar Hutang Ambik Dikedai Depan, Masuk Ke Pinjaman Pekerjaan Taluk', 800000, 1, 'Cash', 'struk.png'),
-(157, '2021-01-27 00:00:00', 'Bayar Angsuran', 'Izan', 'Bayar Angsuran Pick Up Grandmax', 2956000, 1, 'Cek Nota', 'struk.png'),
-(158, '2021-01-27 00:00:00', 'Pinjaman Uang', 'Nanang', 'Kirim Uang Menggunakan BRI Link Untuk Pekerjaan Concong', 4007000, 1, 'Cash', 'struk.png'),
-(159, '2021-01-27 00:00:00', 'Pengisian Pulsa', 'Nanang', 'Isi Pulsa Nanang', 52000, 1, 'Cash', 'struk.png'),
-(160, '2021-01-28 00:00:00', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya BRI', 306500, 1, 'Via M-banking', 'struk.png'),
-(161, '2021-01-28 00:00:00', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 4006500, 1, 'Via M-banking', 'struk.png'),
-(162, '2021-01-28 00:00:00', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya Bank Riau', 506500, 1, 'Via M-banking', 'struk.png'),
-(163, '2021-01-28 00:00:00', 'Pengiriman Uang', 'Alwis', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(164, '2021-01-29 00:00:00', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Untuk DL Ke Dumai', 1000000, 1, 'Via M-banking', 'struk.png'),
-(165, '2021-01-29 00:00:00', 'Pinjaman Uang', 'Ambik', 'Pinjaman Uang Sama Bos', 300000, 1, 'Cash', 'struk.png'),
-(166, '2021-01-29 00:00:00', 'Pengiriman Uang', 'Batam Jaya Elek', 'Pengeluaran Beli Elektronik Bos', 2455500, 1, 'Via M-banking', 'struk.png'),
-(167, '2021-01-29 00:00:00', 'Pengiriman Uang', 'Nova Nurhaliza', 'Kirim Uang Untuk Pemberian Ke Istri Bg Siam', 306500, 1, 'Via M-banking', 'struk.png'),
-(168, '2021-01-30 00:00:00', 'Biaya Adm', 'Izan', 'Biaya Admin Bank + Parkir', 11000, 1, 'Cash', 'struk.png'),
-(169, '2021-01-30 00:00:00', 'Pengiriman Uang', 'Safri', 'Pengiriman Uang Untuk Pelunasan Biaya Cor Tiang Di Gembira, Hutang Bos 10,4jt. Untuk Perhitungan Akan Ditanyakan Kembali, Apakah 6jt Dipakai Beli Pompong Dan 4jt Untuk Kerja Baru', 10006500, 1, 'Via M-banking', 'struk.png'),
-(170, '2021-01-30 00:00:00', 'Pengiriman Uang', 'Nanda', 'Kirim Uang Untuk Bayar Upah Bikin Dan Bayar SPT Tahunan', 1106500, 1, 'Via M-banking', 'struk.png'),
-(171, '2021-01-30 00:00:00', 'Pengiriman Uang', 'Sasni', 'Pinjaman Uang Pribadi', 5006500, 1, 'Via M-banking', 'struk.png'),
-(172, '2021-01-30 00:00:00', 'Belanja Kantor', 'Izan', 'Beli Sapu Dan Buku Besar Untuk Dikantor', 36000, 1, 'Cash', 'struk.png'),
-(173, '2021-01-30 00:00:00', 'Pemberian Uang', 'Ican', 'Ambil Uang Pinjaman Yg Dialihkan Ke Pekerjaan Mahato (pinjaman Dipotong Ke Bg Jon)', 200000, 1, 'Cash', 'struk.png');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_token`
+-- Table structure for table `tb_token`
 --
 
 CREATE TABLE `tb_token` (
@@ -260,20 +69,12 @@ CREATE TABLE `tb_token` (
   `email` varchar(128) NOT NULL,
   `token` varchar(128) NOT NULL,
   `date_created` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data untuk tabel `tb_token`
---
-
-INSERT INTO `tb_token` (`id`, `email`, `token`, `date_created`) VALUES
-(3, '1185031043@students.uin-suska.ac.id', 'pwKumHVmyCtexrOIKcN1t2dYqJYR+7SVE+nbTTJNiNc=', 1610729352),
-(4, '11850310439@students.uin-suska.ac.id', 'LRE+YUU7tDFW2ktc8CRcLWNH4Tp5pWyMa+WJyDkEyVY=', 1610729825);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_transaksi`
+-- Table structure for table `tb_transaksi`
 --
 
 CREATE TABLE `tb_transaksi` (
@@ -287,554 +88,12 @@ CREATE TABLE `tb_transaksi` (
   `volume` int(50) NOT NULL,
   `keterangan` varchar(256) NOT NULL,
   `bukti_transaksi` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data untuk tabel `tb_transaksi`
---
-
-INSERT INTO `tb_transaksi` (`kode`, `tanggal`, `jenis`, `uraian`, `penerima`, `kebutuhan`, `satuan`, `volume`, `keterangan`, `bukti_transaksi`) VALUES
-(1, '2021-01-01 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 16038262, 1, 'Sisa Kas Bulan Maret', 'struk.png'),
-(2, '2021-01-01 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 150000000, 1, 'Penarikan Di Bank Riau', 'struk.png'),
-(3, '2021-01-02 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 20000000, 1, 'Penarikan Di Bank Riau', 'struk.png'),
-(4, '2021-01-03 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 100000000, 1, 'Penarikan Di Bank Riau', 'struk.png'),
-(5, '2021-01-04 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 10000000, 1, 'Penarikan Dari Bank Bukopin', 'struk.png'),
-(6, '2021-01-05 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 25000000, 1, 'Kiriman Dari Bastra Kurnia', 'struk.png'),
-(7, '2021-01-06 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 20000000, 1, 'Penarikan Dari Bank Riau 14jt, Sisa Dari Bos', 'struk.png'),
-(8, '2021-01-07 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 30000000, 1, ' Uang Dari Koperasi PLN ', 'struk.png'),
-(9, '2021-01-08 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 5000000, 1, 'Penarikan Di Bank Bukopin', 'struk.png'),
-(10, '2021-01-09 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 15000000, 1, 'Penarikan Uang Di Bank Riau', 'struk.png'),
-(11, '2021-01-10 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 10000000, 1, 'Penarikan Uang Di Bank Riau', 'struk.png'),
-(14, '2021-01-01 00:00:00', 'k', 'Pengiriman Uang', 'Karmila', 'Kirim Uang Untuk Pekerjaan Selat Panjang', 100000000, 1, 'Cek Kwitansi', 'struk.png'),
-(15, '2021-01-01 00:00:00', 'k', 'Biaya Adm', 'Izan', 'Biaya Adm Bank Pengiriman Dan Penarikan Uang + Parkir X 2', 32000, 1, 'Cach', 'struk.png'),
-(16, '2021-01-01 00:00:00', 'k', 'Beli Materai', 'Izan', 'Beli Materai 6000 Se Papan', 300000, 1, 'Cash', 'struk.png'),
-(17, '2021-01-01 00:00:00', 'k', 'Beli Makan', 'Izan', 'Beli Makan Anggota', 20000, 1, 'Cash', 'struk.png'),
-(18, '2021-01-01 00:00:00', 'k', 'Beli Kue', 'Izan', 'Beli Kue Untuk Dikantor', 50000, 1, 'Cash', 'struk.png'),
-(19, '2021-01-01 00:00:00', 'k', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Untuk DL Di Tembilahan', 3500000, 1, 'Via M-banking', 'struk.png'),
-(20, '2021-01-01 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 2000000, 1, 'Via M-banking', 'struk.png'),
-(22, '2021-01-01 00:00:00', 'k', 'Pemberian Uang', 'Helpiati', 'Pemberian Uang Angsur Hutang Bos', 5000000, 1, 'Cash', 'struk.png'),
-(23, '2021-01-01 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Makanan Untuk Dikantor', 122500, 1, 'Cek Nota', 'struk.png'),
-(24, '2021-01-02 00:00:00', 'k', 'Pengiriman Uang', 'Rio Novingki', 'Ongkos Untuk Jemput Barang Di PLN Rengat', 806500, 1, 'Via M-banking', 'struk.png'),
-(25, '2021-01-02 00:00:00', 'k', 'Pengiriman Uang', 'Alwis', 'Kirim Uang Untuk Bayar Hutang Bos Ke Rusdi Karim', 18006500, 1, 'Via M-banking', 'struk.png'),
-(26, '2021-01-02 00:00:00', 'k', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Bos', 78000, 1, 'Via M-banking', 'struk.png'),
-(27, '2021-01-02 00:00:00', 'k', 'Pengiriman Uang', 'Afrida', 'Kirim Uang Untuk Pembayaran Beli Material', 15000000, 1, 'Via M-banking', 'struk.png'),
-(28, '2021-01-02 00:00:00', 'k', 'Pengiriman Uang', 'Sasni', 'Kirim Uang Untuk .....', 2006500, 1, 'Via M-banking', 'struk.png'),
-(29, '2021-01-02 00:00:00', 'k', 'Pengiriman Uang', 'Sofia Dinata', 'Kirim Uang Untuk Angsuran Hutang Bos', 3000000, 1, 'Via M-banking', 'struk.png'),
-(30, '2021-01-03 00:00:00', 'k', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Tambahan Untuk DL Di Tembilahan', 3000000, 1, 'Via M-banking', 'struk.png'),
-(31, '2021-01-03 00:00:00', 'k', 'Pengiriman Uang', 'Sugiman', 'Kirim Uang Pinjaman Pekerjaan Mahato Jhon', 10006500, 1, 'Via M-banking', 'struk.png'),
-(32, '2021-01-03 00:00:00', 'k', 'Pinjaman Uang', 'Ambik', 'Pinjaman Uang Untuk Pekerjaan Taluk Pada Tgl 02-04', 6000000, 1, 'Cek Kwitansi', 'struk.png'),
-(33, '2021-01-03 00:00:00', 'k', 'Biaya Adm', 'Izan', 'Biaya Adm Penarikan Uang Pada Tgl 02-04 + Parkir', 12000, 1, 'Cash', 'struk.png'),
-(34, '2021-01-03 00:00:00', 'k', 'Beli Tisu', 'Izan', 'Beli Tisu Untuk Dikantor', 40000, 1, 'Cash', 'struk.png'),
-(35, '2021-01-03 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Beli Atk Kantor', 41000, 1, 'Cek Nota', 'struk.png'),
-(36, '2021-01-03 00:00:00', 'k', 'Beli Map', 'Izan', 'Beli Map Dan Tinta Pena Untuk Bos', 15000, 1, 'Cash', 'struk.png'),
-(37, '2021-01-03 00:00:00', 'k', 'Pengiriman Uang', 'Heni', 'Kirim Uang Ke Anak Bos', 102500, 1, 'Via Ovo Izan', 'struk.png'),
-(38, '2021-01-03 00:00:00', 'k', 'Pengiriman Uang', 'Rio Novingki', 'Kirim Uang Untuk .....', 1056500, 1, 'Via M-banking', 'struk.png'),
-(40, '2021-01-03 00:00:00', 'k', 'Pengiriman Uang', 'Mita Julia', 'Kirim Uang Untuk Heni', 106500, 1, 'Via M-banking', 'struk.png'),
-(41, '2021-01-04 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk .....', 806500, 1, 'Via M-banking', 'struk.png'),
-(42, '2021-01-04 00:00:00', 'k', 'Pengiriman Uang', 'Nova Nurhaliza', 'Kirim Uang Untuk .....', 156500, 1, 'Via M-banking', 'struk.png'),
-(43, '2021-01-04 00:00:00', 'k', 'Bayar Hutang Kedai', 'Izan', 'Bayar Hutang Kedai Depan 5 Hari', 203000, 1, 'Cash', 'struk.png'),
-(44, '2021-01-04 00:00:00', 'k', 'Beli Aqua Gelas', 'Izan', 'Beli Aqua Gelas Dan Rokok Bg Siam', 40000, 1, 'Cash', 'struk.png'),
-(45, '2021-01-05 00:00:00', 'k', 'Pengisian Token', 'Pak Bos', 'Isi Token Bos', 52500, 1, 'Via M-banking', 'struk.png'),
-(46, '2021-01-06 00:00:00', 'k', 'Pengisian Token', 'Izan', 'Isi Token Kantor', 22000, 1, 'Cash', 'struk.png'),
-(47, '2021-01-06 00:00:00', 'k', 'Pengisian Token', 'Izan', 'Tambah Isi Token Kantor', 203000, 1, 'Cash', 'struk.png'),
-(48, '2021-01-06 00:00:00', 'k', 'Parkir Bank', 'Izan', 'Uangnya Dikasih Ke Bg Siam', 5000, 1, 'Cash', 'struk.png'),
-(49, '2021-01-06 00:00:00', 'k', 'Pengsian Token', 'Pak Bos', 'Isi Token Rumah Bos', 503000, 1, 'Cash', 'struk.png'),
-(50, '2021-01-06 00:00:00', 'k', 'Pengiriman Uang', 'Suhermanto', 'Kirim Uang Untuk Pembelian Material Di Istana Baut', 5006500, 1, 'Via M-banking', 'struk.png'),
-(51, '2021-01-07 00:00:00', 'k', 'Pengiriman Uang', 'Alwis', 'Kirim Uang Untuk Pinjaman Pribadi', 12006500, 1, 'Via M-banking', 'struk.png'),
-(52, '2021-01-07 00:00:00', 'k', 'Pengiriman Uang', 'Helman', 'Kirim Uang Untuk Nanang Di Concong', 15000000, 1, 'Via M-banking', 'struk.png'),
-(53, '2021-01-07 00:00:00', 'k', 'Pengiriman Uang', 'Andreas', 'Kirim Uang Untuk Beli Material', 1852000, 1, 'Via M-banking', 'struk.png'),
-(54, '2021-01-07 00:00:00', 'k', 'Pemberian Uang', 'Andreas', 'Beli Material Yang Lain', 30000000, 1, 'Cek Nota', 'struk.png'),
-(55, '2021-01-07 00:00:00', 'k', 'Belanja Denok', 'Denok', 'Belanja Istri Bos', 400000, 1, 'Cash', 'struk.png'),
-(56, '2021-01-07 00:00:00', 'k', 'Beli Gas', 'Si Im', 'Beli Gas Untuk Rumah Bos', 100000, 1, 'Cash', 'struk.png'),
-(57, '2021-01-07 00:00:00', 'k', 'Pemberian Uang', 'Fery', 'DL Ke Dumai Dengan Bg Siam', 1500000, 1, 'Cash', 'struk.png'),
-(58, '2021-01-07 00:00:00', 'k', 'Upah Bongkar', 'Izan', 'Upah Bongkar Barang Dari Sinar Lestari', 200000, 1, 'Cash', 'struk.png'),
-(59, '2021-01-07 00:00:00', 'k', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Nelfon Bos', 65000, 1, 'Cash', 'struk.png'),
-(60, '2021-01-07 00:00:00', 'k', 'Gaji Karyawan', 'Izan', 'Gaji Karyawan Bulan Maret', 20022000, 1, 'Cash', 'struk.png'),
-(61, '2021-01-07 00:00:00', 'k', 'Ongkos Travel', 'Izan', 'Ongkos Travel Berkas Ke Rengat', 25000, 1, 'Cash', 'struk.png'),
-(62, '2021-01-07 00:00:00', 'k', 'Pengisian Pulsa', 'Izan', 'Pulsa Izan Bulan April', 52000, 1, 'Cash', 'struk.png'),
-(63, '2021-01-08 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk Ipat Sebagai Pinjaman', 3006500, 1, 'Via M-banking', 'struk.png'),
-(64, '2021-01-08 00:00:00', 'k', 'Pengiriman Uang', 'Helman', 'Kirim Uang Untuk .. (nanang)', 3000000, 1, 'Via M-banking', 'struk.png'),
-(65, '2021-01-08 00:00:00', 'k', 'Pengiriman Uang', 'Sri Wahyuningsih', 'Kirim Uang Untuk Ongkos Berangkat Anggota Ke Concong', 10006500, 1, 'Via M-banking', 'struk.png'),
-(66, '2021-01-08 00:00:00', 'k', 'Pengisian Pulsa', 'Fery', 'Pulsa Fery Bulan April', 52000, 1, 'Cash', 'struk.png'),
-(67, '2021-01-08 00:00:00', 'k', 'Pengiriman Uang', 'Riko', 'Kirim Uang Riko Yang Disetor Ke Bos', 606500, 1, 'Via M-banking', 'struk.png'),
-(68, '2021-01-09 00:00:00', 'k', 'Uang DL', 'Izan', 'Uang DL Izan Ke Taluk 2 Hari', 1070000, 1, 'Cek Kwitansi', 'struk.png'),
-(69, '2021-01-09 00:00:00', 'k', 'Pengiriman Uang', 'Fery', 'Kirim Uang Tambahan Untuk DL Di Dumai', 506500, 1, 'Via M-banking', 'struk.png'),
-(70, '2021-01-09 00:00:00', 'k', 'Beli Kue', 'Pak Bos', 'Beli Kue Di Vanholland Pakai Debit Kartu Atm', 117040, 1, 'Via Debet Atm', 'struk.png'),
-(71, '2021-01-09 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 500000, 1, 'Cash', 'struk.png'),
-(72, '2021-01-10 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 500000, 1, 'Cash', 'struk.png'),
-(73, '2021-01-10 00:00:00', 'k', 'Pengiriman Uang', 'Helman (nanang)', 'Kirim Uang Untuk Nanang Di Concong', 5500000, 1, 'Via M-banking', 'struk.png'),
-(74, '2021-01-10 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 1000000, 1, 'Cash', 'struk.png'),
-(75, '2021-01-10 00:00:00', 'k', 'Pengiriman Uang', 'Fery', 'Kirim Uang Tambahan Untuk DL Di Dumai', 1006500, 1, 'Via M-banking', 'struk.png'),
-(76, '2021-01-10 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 5000000, 1, 'Cash', 'struk.png'),
-(77, '2021-01-10 00:00:00', 'k', 'Pengiriman Uang', 'Roni Suprianto', 'Kirim Uang Untuk Satpam Perumahan Bos', 256500, 1, 'Via M-banking', 'struk.png'),
-(78, '2021-01-11 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Energen, Kopi Dan Lainnya', 50000, 1, 'Cash', 'struk.png'),
-(79, '2021-01-11 00:00:00', 'k', 'Makan Lembur', 'Izan', 'Makan Lembur Karyawan Dengan Bg Siam', 30000, 1, 'Cash', 'struk.png'),
-(80, '2021-01-11 00:00:00', 'k', 'Belanja Denok', 'Denok', 'Belanja Denok Dipasar Buah', 392000, 1, 'Cek Nota', 'struk.png'),
-(81, '2021-01-11 00:00:00', 'k', 'Pemberian Uang', 'Pak Bos', 'Beri Uang Ke Bos', 600000, 1, 'Cash', 'struk.png'),
-(82, '2021-01-11 00:00:00', 'k', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Bos', 151500, 1, 'Via M-banking', 'struk.png'),
-(83, '2021-01-11 00:00:00', 'k', 'Pengiriman Uang', 'Nur Imran', 'Kirim Uang Untuk Antar Orang Ke Concong', 2006500, 1, 'Via M-banking', 'struk.png'),
-(84, '2021-01-11 00:00:00', 'k', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Bos', 78000, 1, 'Via M-banking', 'struk.png'),
-(85, '2021-01-11 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Pinjaman Uang Untuk .....', 1506500, 1, 'Via M-banking', 'struk.png'),
-(86, '2021-01-11 00:00:00', 'k', 'Pengiriman Uang', 'Nur Imran', 'Tambahan Kirim Uang Untuk Di Concong', 506500, 1, 'Via M-banking', 'struk.png'),
-(87, '2021-01-11 00:00:00', 'k', 'Pengiriman Uang', 'Helman (nanang)', 'Kirim Uang Untuk Di Concong', 3000000, 1, 'Via M-banking', 'struk.png'),
-(88, '2021-01-11 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 1000000, 1, 'Cash', 'struk.png'),
-(89, '2021-01-11 00:00:00', 'k', 'Pengiriman Uang', 'Elysa Evanawi', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(90, '2021-01-12 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Kantor', 104000, 1, 'Cash', 'struk.png'),
-(91, '2021-01-12 00:00:00', 'k', 'Pengiriman Uang', 'Syafrizal', 'Kirim Uang Untuk Bayar Hutang Bos (masih Ragu)', 1006500, 1, 'Via M-banking', 'struk.png'),
-(92, '2021-01-12 00:00:00', 'k', 'Pengiriman Uang', 'Fery', 'Kirim Uang Untuk Tambahan DL Di Dumai', 306500, 1, 'Via M-banking', 'struk.png'),
-(93, '2021-01-12 00:00:00', 'k', 'Pengiriman Uang', 'Mariatun', 'Kirim Uang Untuk Pengeluaran Denok', 100000, 1, 'Via M-banking', 'struk.png'),
-(94, '2021-01-12 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Ke Rekening Bank Riau Bos', 1006500, 1, 'Via M-banking', 'struk.png'),
-(95, '2021-01-13 00:00:00', 'k', 'Bayar Wifi Bos', 'Izan', 'Bayar Wifi Rumah Bos', 350000, 1, 'Cek Nota', 'struk.png'),
-(96, '2021-01-13 00:00:00', 'k', 'Bayar Hutang Kedai', 'Izan', 'Bayar Hutang Kedai Depan 9 Hari', 330000, 1, 'Cash', 'struk.png'),
-(97, '2021-01-13 00:00:00', 'k', 'Pengiriman Uang', 'Nurhasyim', 'Kirim Uang Untuk ....', 506500, 1, 'Via M-banking', 'struk.png'),
-(98, '2021-01-13 00:00:00', 'k', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Untuk DL Ke Taluk', 1000000, 1, 'Via M-banking', 'struk.png'),
-(99, '2021-01-13 00:00:00', 'k', 'Pengiriman Uang', 'Nurhasyim', 'Kirim Uang Untuk ....', 506500, 1, 'Via M-banking', 'struk.png'),
-(100, '2021-01-13 00:00:00', 'k', 'Pengiriman Uang', 'Andreas', 'Kirim Uang Untuk Bayar Kekurangan Beli Material', 335000, 1, 'Via M-banking', 'struk.png'),
-(101, '2021-01-14 00:00:00', 'k', 'Minum Bos', 'Pak Bos', 'Minum Bos', 13000, 1, 'Cash1161500', 'struk.png'),
-(102, '2021-01-14 00:00:00', 'k', 'Beli Masker', 'Pak Bos', 'Beli Masker Untuk Bso', 65000, 1, 'Cash', 'struk.png'),
-(103, '2021-01-14 00:00:00', 'k', 'Pemberian Uang', 'Nur Imran', 'Bayar Kekurang Uang Beli Material Di Istana Baut', 10000, 1, 'Cash', 'struk.png'),
-(104, '2021-01-14 00:00:00', 'k', 'Biaya Adm', 'Izan', 'Bayar Hutang Biaya Adm Ke Bank Riau 25000 + 10000', 35000, 1, 'Cash', 'struk.png'),
-(105, '2021-01-14 00:00:00', 'k', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Untuk Nanang Di Concong', 506500, 1, 'Via M-banking', 'struk.png'),
-(106, '2021-01-14 00:00:00', 'k', 'Parkir Bank', 'Izan', 'Bayar Parkir Bank 2x', 2, 1, 'Cash', 'struk.png'),
-(107, '2021-01-14 00:00:00', 'k', 'Servis Mobil', 'Pak Bos', 'Servis Mobil Bos', 830000, 1, 'Via M-banking', 'struk.png'),
-(108, '2021-01-14 00:00:00', 'k', 'Ongkos Barang', 'Izan', 'Ongkos Mobil Antar Barang Ke Mahato 1,9jt, Dibayar 1jt, Sisanya Dari Bos', 1000000, 1, 'Cek Kwitansi', 'struk.png'),
-(109, '2021-01-14 00:00:00', 'k', 'Beli Paralon', 'Izan', 'Beli Paralon 2\"', 75000, 1, 'Cash', 'struk.png'),
-(110, '2021-01-14 00:00:00', 'k', 'Upah Muat', 'Ambik', 'Upah Muat Barang', 200000, 1, 'Cash', 'struk.png'),
-(111, '2021-01-14 00:00:00', 'k', 'Pengiriman Uang', 'Retno Hardiyanti', 'Kirim Uang Untuk ...', 7306500, 1, 'Via M-banking', 'struk.png'),
-(112, '2021-01-15 00:00:00', 'k', 'Pengiriman Uang', 'Sugiman', 'Pinjaman Uang Pekerjaan Bg Jon Dimahato', 7006500, 1, 'Via M-banking', 'struk.png'),
-(113, '2021-01-15 00:00:00', 'k', 'Pengiriman Uang', 'Sasni (ambik)', 'Bayar Hutang Makan Ambik Di Taluk + Uang Dari Bos 3jt', 4506500, 1, 'Via M-banking', 'struk.png'),
-(114, '2021-01-15 00:00:00', 'k', 'Beli Peyek', 'Izan', 'Beli Peyek Untuk Di Mobil Bos', 35000, 1, 'Cash', 'struk.png'),
-(115, '2021-01-16 00:00:00', 'k', 'Pemberian Uang', 'Pak Bos', 'Pemberian Uang Ke Bos', 5000000, 1, 'Cash', 'struk.png'),
-(116, '2021-01-16 00:00:00', 'k', 'Pengisian Token', 'Izan', 'Isi Token Kantor', 52000, 1, 'Cash', 'struk.png'),
-(117, '2021-01-16 00:00:00', 'k', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Untuk Nanang Di Concong', 2006500, 1, 'Via M-banking', 'struk.png'),
-(118, '2021-01-16 00:00:00', 'k', 'Pengiriman Uang', 'Rio Novingki', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(119, '2021-01-16 00:00:00', 'k', 'Pengiriman Uang', 'Radius', 'Kirim Uang Untuk ....', 2506500, 1, 'Via M-banking', 'struk.png'),
-(120, '2021-01-16 00:00:00', 'k', 'Pengiriman Uang', 'Hasnul Abdi', 'Kirim Uang Untuk Gaji Abdi', 756500, 1, 'Via M-banking', 'struk.png'),
-(121, '2021-01-16 00:00:00', 'k', 'Pengiriman Uang', 'Nur Imran', 'Kirim Uang Untuk Pinjaman Uang Sewa Rumah', 706500, 1, 'Via M-banking', 'struk.png'),
-(122, '2021-01-17 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(123, '2021-01-17 00:00:00', 'k', 'Pengiriman Uang', 'Sofia Dinata', 'Kirim Uang Untuk ....', 500000, 1, 'Via M-banking', 'struk.png'),
-(124, '2021-01-17 00:00:00', 'k', 'Pengiriman Uang', 'Cindy Amelia', 'Kirim Uang Untuk ....', 306500, 1, 'Via M-banking', 'struk.png'),
-(125, '2021-01-17 00:00:00', 'k', 'Biaya Adm', 'BCA', 'Biaya Adm Atm Otomatis', 20000, 1, 'Otomatis', 'struk.png'),
-(126, '2021-01-18 00:00:00', 'k', 'Pengiriman Uang', 'Andreas', 'Kirim Uang Untuk Bayar Material', 2335000, 1, 'Via M-banking', 'struk.png'),
-(127, '2021-01-18 00:00:00', 'k', 'Pengiriman Uang', 'Sasni', 'Pinjaman Uang Dialihkan Ke Pekerjaan Mahato', 1006500, 1, 'Via M-banking', 'struk.png'),
-(128, '2021-01-18 00:00:00', 'k', 'Pengiriman Uang', 'Toni Fikri', 'Kirim Uang Untuk Bayar Sorum Bg Siim, Sudah Dibayar Oleh Bg Si Im', 1000000, 1, 'Via M-banking', 'struk.png'),
-(129, '2021-01-18 00:00:00', 'k', 'Pengiriman Uang', 'Tri Andini', 'Kirim Uang Untuk ...', 1006500, 1, 'Via M-banking', 'struk.png'),
-(131, '2021-01-20 00:00:00', 'k', 'Pengisian Token', 'Izan', 'Isi Token Kantor', 203000, 1, 'Via M-banking', 'struk.png'),
-(132, '2021-01-20 00:00:00', 'k', 'Pembayaran Wifi', 'Izan', 'Bayar Wifi Kantor', 726000, 1, 'Cek Nota', 'struk.png'),
-(133, '2021-01-20 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Kantor Dan Beli Makan Kucing', 60000, 1, 'Cash', 'struk.png'),
-(134, '2021-01-20 00:00:00', 'k', 'Beli Galon', 'Izan', 'Beli Air Galon Untuk Kantor', 8000, 1, 'Cash', 'struk.png'),
-(135, '2021-01-20 00:00:00', 'k', 'Pengiriman Paket', 'Izan', 'Kirim Paket Berkas Ke Rengat', 25000, 1, 'Cek Nota', 'struk.png'),
-(136, '2021-01-21 00:00:00', 'k', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Ke Nanang Concong', 5006500, 1, 'Via M-banking', 'struk.png'),
-(137, '2021-01-21 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Kantor', 44000, 1, 'Cek Nota', 'struk.png'),
-(138, '2021-01-21 00:00:00', 'k', 'Admin Bank', 'Izan', 'Admin Bank Penarikan Uang + Parkir', 17000, 1, 'Cash', 'struk.png'),
-(139, '2021-01-21 00:00:00', 'k', 'Minum Bos', 'Izan', 'Beli Minum Bos Di Alfamart', 20000, 1, 'Cash', 'struk.png'),
-(141, '2021-01-21 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 1006500, 1, 'Via M-banking', 'struk.png'),
-(142, '2021-01-21 00:00:00', 'k', 'Pengisian Token', 'Pak Bos', 'Isi Token Rumah Bos', 502500, 1, 'Via M-banking', 'struk.png'),
-(143, '2021-01-22 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ...', 1006500, 1, 'Via M-banking', 'struk.png'),
-(144, '2021-01-22 00:00:00', 'k', 'Pengiriman Uang', 'Saparrudin', 'Kirim Uang Untuk Pemberian Gudang PLN Dumai', 506500, 1, 'Via M-banking', 'struk.png'),
-(145, '2021-01-22 00:00:00', 'k', 'Pengiriman Uang', 'Nova Nurhaliza', 'Kirim Uang Untuk ...', 506500, 1, 'Via M-banking', 'struk.png'),
-(146, '2021-01-22 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Beli Energen, Aqua Gelas, Roti', 45000, 1, 'Cash', 'struk.png'),
-(147, '2021-01-23 00:00:00', 'k', 'Admin Bank', 'Izan', 'Admin Bank Penarikan Uang + Parkir', 12000, 1, 'Cash', 'struk.png'),
-(148, '2021-01-23 00:00:00', 'k', 'Pinjaman Uang', 'Nur Imran', 'Pinjaman Pribadi', 100000, 1, 'Cash', 'struk.png'),
-(149, '2021-01-23 00:00:00', 'k', 'Pinjaman Uang', 'Si Am', 'Pinjaman Pribadi', 50000, 1, 'Cash', 'struk.png'),
-(150, '2021-01-23 00:00:00', 'k', 'Pembayaran Fortuner', 'Pak Bos', 'Pembayaran Fortuner Via Debit Otomatis Atm', 4827400, 1, 'Via Debet Atm', 'struk.png'),
-(151, '2021-01-24 00:00:00', 'k', 'Pengiriman Uang', 'Sugiman', 'Kirim Uang Pinjaman Pekerjaan Mahato Jhon', 1006500, 1, 'Via M-banking', 'struk.png'),
-(152, '2021-01-24 00:00:00', 'k', 'Pengiriman Uang', 'Tri Andini', 'Kirim Uang Untuk ....', 356500, 1, 'Via M-banking', 'struk.png'),
-(153, '2021-01-24 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 1006500, 1, 'Via M-banking', 'struk.png'),
-(154, '2021-01-24 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 2006500, 1, 'Via M-banking', 'struk.png'),
-(155, '2021-01-24 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 506500, 1, 'Via M-banking', 'struk.png'),
-(156, '2021-01-25 00:00:00', 'k', 'Pengisian Token', 'Pak Bos', 'Isi Token Rumah Bos', 102500, 1, 'Via M-banking', 'struk.png'),
-(157, '2021-01-26 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 506500, 1, 'Via M-banking', 'struk.png'),
-(158, '2021-01-27 00:00:00', 'k', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Untuk Kerja Concong', 3006500, 1, 'Via M-banking', 'struk.png'),
-(160, '2021-01-27 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(161, '2021-01-27 00:00:00', 'k', 'Pengiriman Uang', 'Adip', 'Pinjaman Uang Pribadi Pekerjaan Selat Panjang + Admin 3500', 5004500, 1, 'Via Ovo Izan', 'struk.png'),
-(162, '2021-01-27 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 506500, 1, 'Via M-banking', 'struk.png'),
-(163, '2021-01-27 00:00:00', 'k', 'Parkir Bank', 'Izan', 'Parkir Di 3  Bank + Sumbangan Bpk\"', 10000, 1, 'Cash', 'struk.png'),
-(166, '2021-01-27 00:00:00', 'k', 'Bayar Hutang', 'Izan', 'Bayar Bon Beli Material Ditoko Intan', 1860000, 1, 'Cek Nota', 'struk.png'),
-(167, '2021-01-27 00:00:00', 'k', 'Pemberian Uang', 'Helviati', 'Pemberian Uang Pribadi', 1000000, 1, 'Cash', 'struk.png'),
-(168, '2021-01-27 00:00:00', 'k', 'Bayar Hutang Kedai', 'Izan', 'Bayar Hutang Kedai Depan', 100000, 1, 'Cash', 'struk.png'),
-(169, '2021-01-27 00:00:00', 'k', 'Bayara Hutang Kedai', 'Ambik', 'Bayar Hutang Ambik Dikedai Depan, Masuk Ke Pinjaman Pekerjaan Taluk', 800000, 1, 'Cash', 'struk.png'),
-(170, '2021-01-27 00:00:00', 'k', 'Bayar Angsuran', 'Izan', 'Bayar Angsuran Pick Up Grandmax', 2956000, 1, 'Cek Nota', 'struk.png'),
-(171, '2021-01-27 00:00:00', 'k', 'Pinjaman Uang', 'Nanang', 'Kirim Uang Menggunakan BRI Link Untuk Pekerjaan Concong', 4007000, 1, 'Cash', 'struk.png'),
-(172, '2021-01-27 00:00:00', 'k', 'Pengisian Pulsa', 'Nanang', 'Isi Pulsa Nanang', 52000, 1, 'Cash', 'struk.png'),
-(173, '2021-01-28 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya BRI', 306500, 1, 'Via M-banking', 'struk.png'),
-(175, '2021-01-28 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya Bank Riau', 506500, 1, 'Via M-banking', 'struk.png'),
-(176, '2021-01-28 00:00:00', 'k', 'Pengiriman Uang', 'Alwis', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(177, '2021-01-29 00:00:00', 'k', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Untuk DL Ke Dumai', 1000000, 1, 'Via M-banking', 'struk.png'),
-(178, '2021-01-29 00:00:00', 'k', 'Pinjaman Uang', 'Ambik', 'Pinjaman Uang Sama Bos', 300000, 1, 'Cash', 'struk.png'),
-(180, '2021-01-29 00:00:00', 'k', 'Pengiriman Uang', 'Nova Nurhaliza', 'Kirim Uang Untuk Pemberian Ke Istri Bg Siam', 306500, 1, 'Via M-banking', 'struk.png'),
-(181, '2021-01-30 00:00:00', 'k', 'Biaya Adm', 'Izan', 'Biaya Admin Bank + Parkir', 11000, 1, 'Cash', 'struk.png'),
-(183, '2021-01-30 00:00:00', 'k', 'Pengiriman Uang', 'Nanda', 'Kirim Uang Untuk Bayar Upah Bikin Dan Bayar SPT Tahunan', 1106500, 1, 'Via M-banking', 'struk.png'),
-(185, '2021-01-30 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Beli Sapu Dan Buku Besar Untuk Dikantor', 36000, 1, 'Cash', 'struk.png'),
-(186, '2021-01-30 00:00:00', 'k', 'Pemberian Uang', 'Ican', 'Ambil Uang Pinjaman Yg Dialihkan Ke Pekerjaan Mahato (pinjaman Dipotong Ke Bg Jon)', 200000, 1, 'Cash', 'struk.png'),
-(187, '2021-02-01 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 16038262, 1, 'Sisa Kas Bulan Maret', 'struk.png'),
-(188, '2021-02-01 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 150000000, 1, 'Penarikan Di Bank Riau', 'struk.png'),
-(189, '2021-02-02 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 20000000, 1, 'Penarikan Di Bank Riau', 'struk.png'),
-(190, '2021-02-03 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 100000000, 1, 'Penarikan Di Bank Riau', 'struk.png'),
-(191, '2021-02-04 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 10000000, 1, 'Penarikan Dari Bank Bukopin', 'struk.png'),
-(192, '2021-02-05 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 25000000, 1, 'Kiriman Dari Bastra Kurnia', 'struk.png'),
-(193, '2021-02-06 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 20000000, 1, 'Penarikan Dari Bank Riau 14jt, Sisa Dari Bos', 'struk.png'),
-(194, '2021-02-07 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 30000000, 1, ' Uang Dari Koperasi PLN ', 'struk.png'),
-(195, '2021-02-08 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 5000000, 1, 'Penarikan Di Bank Bukopin', 'struk.png'),
-(196, '2021-02-09 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 15000000, 1, 'Penarikan Uang Di Bank Riau', 'struk.png'),
-(197, '2021-02-10 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 10000000, 1, 'Penarikan Uang Di Bank Riau', 'struk.png'),
-(198, '2021-02-11 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 83500000, 1, 'Penarikan Dari Bank Riau', 'struk.png'),
-(199, '2021-02-12 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 18000000, 1, 'Penarikan Dari Bank Riau', 'android-chrome-192x192.png'),
-(200, '2021-02-01 00:00:00', 'k', 'Pengiriman Uang', 'Karmila', 'Kirim Uang Untuk Pekerjaan Selat Panjang', 100000000, 1, 'Cek Kwitansi', 'struk.png'),
-(201, '2021-02-01 00:00:00', 'k', 'Biaya Adm', 'Izan', 'Biaya Adm Bank Pengiriman Dan Penarikan Uang + Parkir X 2', 32000, 1, 'Cach', 'struk.png'),
-(202, '2021-02-01 00:00:00', 'k', 'Beli Materai', 'Izan', 'Beli Materai 6000 Se Papan', 300000, 1, 'Cash', 'struk.png'),
-(203, '2021-02-01 00:00:00', 'k', 'Beli Makan', 'Izan', 'Beli Makan Anggota', 20000, 1, 'Cash', 'struk.png'),
-(204, '2021-02-01 00:00:00', 'k', 'Beli Kue', 'Izan', 'Beli Kue Untuk Dikantor', 50000, 1, 'Cash', 'struk.png'),
-(205, '2021-02-01 00:00:00', 'k', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Untuk DL Di Tembilahan', 3500000, 1, 'Via M-banking', 'struk.png'),
-(206, '2021-02-01 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 2000000, 1, 'Via M-banking', 'struk.png'),
-(207, '2021-02-01 00:00:00', 'k', 'Pengiriman Uang', 'Madi', 'Kirim Uang Untuk Ke Gembira Dengan Rincian Pinjaman Ada Di Wa Izan', 9006500, 1, 'Via M-banking', 'struk.png'),
-(208, '2021-02-01 00:00:00', 'k', 'Pemberian Uang', 'Helpiati', 'Pemberian Uang Angsur Hutang Bos', 5000000, 1, 'Cash', 'struk.png'),
-(209, '2021-02-01 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Makanan Untuk Dikantor', 122500, 1, 'Cek Nota', 'struk.png'),
-(210, '2021-02-02 00:00:00', 'k', 'Pengiriman Uang', 'Rio Novingki', 'Ongkos Untuk Jemput Barang Di PLN Rengat', 806500, 1, 'Via M-banking', 'struk.png'),
-(211, '2021-02-02 00:00:00', 'k', 'Pengiriman Uang', 'Alwis', 'Kirim Uang Untuk Bayar Hutang Bos Ke Rusdi Karim', 18006500, 1, 'Via M-banking', 'struk.png'),
-(212, '2021-02-02 00:00:00', 'k', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Bos', 78000, 1, 'Via M-banking', 'struk.png'),
-(213, '2021-02-02 00:00:00', 'k', 'Pengiriman Uang', 'Afrida', 'Kirim Uang Untuk Pembayaran Beli Material', 15000000, 1, 'Via M-banking', 'struk.png'),
-(214, '2021-02-02 00:00:00', 'k', 'Pengiriman Uang', 'Sasni', 'Kirim Uang Untuk .....', 2006500, 1, 'Via M-banking', 'struk.png'),
-(215, '2021-02-02 00:00:00', 'k', 'Pengiriman Uang', 'Sofia Dinata', 'Kirim Uang Untuk Angsuran Hutang Bos', 3000000, 1, 'Via M-banking', 'struk.png'),
-(216, '2021-02-03 00:00:00', 'k', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Tambahan Untuk DL Di Tembilahan', 3000000, 1, 'Via M-banking', 'struk.png'),
-(217, '2021-02-03 00:00:00', 'k', 'Pengiriman Uang', 'Sugiman', 'Kirim Uang Pinjaman Pekerjaan Mahato Jhon', 10006500, 1, 'Via M-banking', 'struk.png'),
-(218, '2021-02-03 00:00:00', 'k', 'Pinjaman Uang', 'Ambik', 'Pinjaman Uang Untuk Pekerjaan Taluk Pada Tgl 02-04', 6000000, 1, 'Cek Kwitansi', 'struk.png'),
-(219, '2021-02-03 00:00:00', 'k', 'Biaya Adm', 'Izan', 'Biaya Adm Penarikan Uang Pada Tgl 02-04 + Parkir', 12000, 1, 'Cash', 'struk.png'),
-(220, '2021-02-03 00:00:00', 'k', 'Beli Tisu', 'Izan', 'Beli Tisu Untuk Dikantor', 40000, 1, 'Cash', 'struk.png'),
-(221, '2021-02-03 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Beli Atk Kantor', 41000, 1, 'Cek Nota', 'struk.png'),
-(222, '2021-02-03 00:00:00', 'k', 'Beli Map', 'Izan', 'Beli Map Dan Tinta Pena Untuk Bos', 15000, 1, 'Cash', 'struk.png'),
-(223, '2021-02-03 00:00:00', 'k', 'Pengiriman Uang', 'Heni', 'Kirim Uang Ke Anak Bos', 102500, 1, 'Via Ovo Izan', 'struk.png'),
-(224, '2021-02-03 00:00:00', 'k', 'Pengiriman Uang', 'Rio Novingki', 'Kirim Uang Untuk .....', 1056500, 1, 'Via M-banking', 'struk.png'),
-(225, '2021-02-03 00:00:00', 'k', 'Pengiriman Uang', 'Safri', 'Kirim Uang Untuk Angsur Hutang Bos', 5006500, 1, 'Via M-banking', 'struk.png'),
-(226, '2021-02-03 00:00:00', 'k', 'Pengiriman Uang', 'Mita Julia', 'Kirim Uang Untuk Heni', 106500, 1, 'Via M-banking', 'struk.png'),
-(227, '2021-02-04 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk .....', 806500, 1, 'Via M-banking', 'struk.png'),
-(228, '2021-02-04 00:00:00', 'k', 'Pengiriman Uang', 'Nova Nurhaliza', 'Kirim Uang Untuk .....', 156500, 1, 'Via M-banking', 'struk.png'),
-(229, '2021-02-04 00:00:00', 'k', 'Bayar Hutang Kedai', 'Izan', 'Bayar Hutang Kedai Depan 5 Hari', 203000, 1, 'Cash', 'struk.png'),
-(230, '2021-02-04 00:00:00', 'k', 'Beli Aqua Gelas', 'Izan', 'Beli Aqua Gelas Dan Rokok Bg Siam', 40000, 1, 'Cash', 'struk.png'),
-(231, '2021-02-05 00:00:00', 'k', 'Pengisian Token', 'Pak Bos', 'Isi Token Bos', 52500, 1, 'Via M-banking', 'struk.png'),
-(232, '2021-02-06 00:00:00', 'k', 'Pengisian Token', 'Izan', 'Isi Token Kantor', 22000, 1, 'Cash', 'struk.png'),
-(233, '2021-02-06 00:00:00', 'k', 'Pengisian Token', 'Izan', 'Tambah Isi Token Kantor', 203000, 1, 'Cash', 'struk.png'),
-(234, '2021-02-06 00:00:00', 'k', 'Parkir Bank', 'Izan', 'Uangnya Dikasih Ke Bg Siam', 5000, 1, 'Cash', 'struk.png'),
-(235, '2021-02-06 00:00:00', 'k', 'Pengsian Token', 'Pak Bos', 'Isi Token Rumah Bos', 503000, 1, 'Cash', 'struk.png'),
-(236, '2021-02-06 00:00:00', 'k', 'Pengiriman Uang', 'Suhermanto', 'Kirim Uang Untuk Pembelian Material Di Istana Baut', 5006500, 1, 'Via M-banking', 'struk.png'),
-(237, '2021-02-07 00:00:00', 'k', 'Pengiriman Uang', 'Alwis', 'Kirim Uang Untuk Pinjaman Pribadi', 12006500, 1, 'Via M-banking', 'struk.png'),
-(238, '2021-02-07 00:00:00', 'k', 'Pengiriman Uang', 'Helman', 'Kirim Uang Untuk Nanang Di Concong', 15000000, 1, 'Via M-banking', 'struk.png'),
-(239, '2021-02-07 00:00:00', 'k', 'Pengiriman Uang', 'Andreas', 'Kirim Uang Untuk Beli Material', 1852000, 1, 'Via M-banking', 'struk.png'),
-(240, '2021-02-07 00:00:00', 'k', 'Pemberian Uang', 'Andreas', 'Beli Material Yang Lain', 30000000, 1, 'Cek Nota', 'struk.png'),
-(241, '2021-02-07 00:00:00', 'k', 'Belanja Denok', 'Denok', 'Belanja Istri Bos', 400000, 1, 'Cash', 'struk.png'),
-(242, '2021-02-07 00:00:00', 'k', 'Beli Gas', 'Si Im', 'Beli Gas Untuk Rumah Bos', 100000, 1, 'Cash', 'struk.png'),
-(243, '2021-02-07 00:00:00', 'k', 'Pemberian Uang', 'Fery', 'DL Ke Dumai Dengan Bg Siam', 1500000, 1, 'Cash', 'struk.png'),
-(244, '2021-02-07 00:00:00', 'k', 'Upah Bongkar', 'Izan', 'Upah Bongkar Barang Dari Sinar Lestari', 200000, 1, 'Cash', 'struk.png'),
-(245, '2021-02-07 00:00:00', 'k', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Nelfon Bos', 65000, 1, 'Cash', 'struk.png'),
-(246, '2021-02-07 00:00:00', 'k', 'Gaji Karyawan', 'Izan', 'Gaji Karyawan Bulan Maret', 20022000, 1, 'Cash', 'struk.png'),
-(247, '2021-02-07 00:00:00', 'k', 'Ongkos Travel', 'Izan', 'Ongkos Travel Berkas Ke Rengat', 25000, 1, 'Cash', 'struk.png'),
-(248, '2021-02-07 00:00:00', 'k', 'Pengisian Pulsa', 'Izan', 'Pulsa Izan Bulan April', 52000, 1, 'Cash', 'struk.png'),
-(249, '2021-02-08 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk Ipat Sebagai Pinjaman', 3006500, 1, 'Via M-banking', 'struk.png'),
-(250, '2021-02-08 00:00:00', 'k', 'Pengiriman Uang', 'Helman', 'Kirim Uang Untuk .. (nanang)', 3000000, 1, 'Via M-banking', 'struk.png'),
-(251, '2021-02-08 00:00:00', 'k', 'Pengiriman Uang', 'Sri Wahyuningsih', 'Kirim Uang Untuk Ongkos Berangkat Anggota Ke Concong', 10006500, 1, 'Via M-banking', 'struk.png'),
-(252, '2021-02-08 00:00:00', 'k', 'Pengisian Pulsa', 'Fery', 'Pulsa Fery Bulan April', 52000, 1, 'Cash', 'struk.png'),
-(253, '2021-02-08 00:00:00', 'k', 'Pengiriman Uang', 'Riko', 'Kirim Uang Riko Yang Disetor Ke Bos', 606500, 1, 'Via M-banking', 'struk.png'),
-(254, '2021-02-09 00:00:00', 'k', 'Uang DL', 'Izan', 'Uang DL Izan Ke Taluk 2 Hari', 1070000, 1, 'Cek Kwitansi', 'struk.png'),
-(255, '2021-02-09 00:00:00', 'k', 'Pengiriman Uang', 'Fery', 'Kirim Uang Tambahan Untuk DL Di Dumai', 506500, 1, 'Via M-banking', 'struk.png'),
-(256, '2021-02-09 00:00:00', 'k', 'Beli Kue', 'Pak Bos', 'Beli Kue Di Vanholland Pakai Debit Kartu Atm', 117040, 1, 'Via Debet Atm', 'struk.png'),
-(257, '2021-02-09 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 500000, 1, 'Cash', 'struk.png'),
-(258, '2021-02-10 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 500000, 1, 'Cash', 'struk.png'),
-(259, '2021-02-10 00:00:00', 'k', 'Pengiriman Uang', 'Helman (nanang)', 'Kirim Uang Untuk Nanang Di Concong', 5500000, 1, 'Via M-banking', 'struk.png'),
-(260, '2021-02-10 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 1000000, 1, 'Cash', 'struk.png'),
-(261, '2021-02-10 00:00:00', 'k', 'Pengiriman Uang', 'Fery', 'Kirim Uang Tambahan Untuk DL Di Dumai', 1006500, 1, 'Via M-banking', 'struk.png'),
-(262, '2021-02-10 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 5000000, 1, 'Cash', 'struk.png'),
-(263, '2021-02-10 00:00:00', 'k', 'Pengiriman Uang', 'Roni Suprianto', 'Kirim Uang Untuk Satpam Perumahan Bos', 256500, 1, 'Via M-banking', 'struk.png'),
-(264, '2021-02-11 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Energen, Kopi Dan Lainnya', 50000, 1, 'Cash', 'struk.png'),
-(265, '2021-02-11 00:00:00', 'k', 'Makan Lembur', 'Izan', 'Makan Lembur Karyawan Dengan Bg Siam', 30000, 1, 'Cash', 'struk.png'),
-(266, '2021-02-11 00:00:00', 'k', 'Belanja Denok', 'Denok', 'Belanja Denok Dipasar Buah', 392000, 1, 'Cek Nota', 'struk.png'),
-(267, '2021-02-11 00:00:00', 'k', 'Pemberian Uang', 'Pak Bos', 'Beri Uang Ke Bos', 600000, 1, 'Cash', 'struk.png'),
-(268, '2021-02-11 00:00:00', 'k', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Bos', 151500, 1, 'Via M-banking', 'struk.png'),
-(269, '2021-02-11 00:00:00', 'k', 'Pengiriman Uang', 'Nur Imran', 'Kirim Uang Untuk Antar Orang Ke Concong', 2006500, 1, 'Via M-banking', 'struk.png'),
-(270, '2021-02-11 00:00:00', 'k', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Bos', 78000, 1, 'Via M-banking', 'struk.png'),
-(271, '2021-02-11 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Pinjaman Uang Untuk .....', 1506500, 1, 'Via M-banking', 'struk.png'),
-(272, '2021-02-11 00:00:00', 'k', 'Pengiriman Uang', 'Nur Imran', 'Tambahan Kirim Uang Untuk Di Concong', 506500, 1, 'Via M-banking', 'struk.png'),
-(273, '2021-02-11 00:00:00', 'k', 'Pengiriman Uang', 'Helman (nanang)', 'Kirim Uang Untuk Di Concong', 3000000, 1, 'Via M-banking', 'struk.png'),
-(274, '2021-02-11 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 1000000, 1, 'Cash', 'struk.png'),
-(275, '2021-02-11 00:00:00', 'k', 'Pengiriman Uang', 'Elysa Evanawi', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(276, '2021-02-12 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Kantor', 104000, 1, 'Cash', 'struk.png'),
-(277, '2021-02-12 00:00:00', 'k', 'Pengiriman Uang', 'Syafrizal', 'Kirim Uang Untuk Bayar Hutang Bos (masih Ragu)', 1006500, 1, 'Via M-banking', 'struk.png'),
-(278, '2021-02-12 00:00:00', 'k', 'Pengiriman Uang', 'Fery', 'Kirim Uang Untuk Tambahan DL Di Dumai', 306500, 1, 'Via M-banking', 'struk.png'),
-(279, '2021-02-12 00:00:00', 'k', 'Pengiriman Uang', 'Mariatun', 'Kirim Uang Untuk Pengeluaran Denok', 100000, 1, 'Via M-banking', 'struk.png'),
-(280, '2021-02-12 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Ke Rekening Bank Riau Bos', 1006500, 1, 'Via M-banking', 'struk.png'),
-(281, '2021-02-13 00:00:00', 'k', 'Bayar Wifi Bos', 'Izan', 'Bayar Wifi Rumah Bos', 350000, 1, 'Cek Nota', 'struk.png'),
-(282, '2021-02-13 00:00:00', 'k', 'Bayar Hutang Kedai', 'Izan', 'Bayar Hutang Kedai Depan 9 Hari', 330000, 1, 'Cash', 'struk.png'),
-(283, '2021-02-13 00:00:00', 'k', 'Pengiriman Uang', 'Nurhasyim', 'Kirim Uang Untuk ....', 506500, 1, 'Via M-banking', 'struk.png'),
-(284, '2021-02-13 00:00:00', 'k', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Untuk DL Ke Taluk', 1000000, 1, 'Via M-banking', 'struk.png'),
-(285, '2021-02-13 00:00:00', 'k', 'Pengiriman Uang', 'Nurhasyim', 'Kirim Uang Untuk ....', 506500, 1, 'Via M-banking', 'struk.png'),
-(286, '2021-02-13 00:00:00', 'k', 'Pengiriman Uang', 'Andreas', 'Kirim Uang Untuk Bayar Kekurangan Beli Material', 335000, 1, 'Via M-banking', 'struk.png'),
-(287, '2021-02-14 00:00:00', 'k', 'Minum Bos', 'Pak Bos', 'Minum Bos', 13000, 1, 'Cash1161500', 'struk.png'),
-(288, '2021-02-14 00:00:00', 'k', 'Beli Masker', 'Pak Bos', 'Beli Masker Untuk Bso', 65000, 1, 'Cash', 'struk.png'),
-(289, '2021-02-14 00:00:00', 'k', 'Pemberian Uang', 'Nur Imran', 'Bayar Kekurang Uang Beli Material Di Istana Baut', 10000, 1, 'Cash', 'struk.png'),
-(290, '2021-02-14 00:00:00', 'k', 'Biaya Adm', 'Izan', 'Bayar Hutang Biaya Adm Ke Bank Riau 25000 + 10000', 35000, 1, 'Cash', 'struk.png'),
-(291, '2021-02-14 00:00:00', 'k', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Untuk Nanang Di Concong', 506500, 1, 'Via M-banking', 'struk.png'),
-(292, '2021-02-14 00:00:00', 'k', 'Parkir Bank', 'Izan', 'Bayar Parkir Bank 2x', 2, 1, 'Cash', 'struk.png'),
-(293, '2021-02-14 00:00:00', 'k', 'Servis Mobil', 'Pak Bos', 'Servis Mobil Bos', 830000, 1, 'Via M-banking', 'struk.png'),
-(294, '2021-02-14 00:00:00', 'k', 'Ongkos Barang', 'Izan', 'Ongkos Mobil Antar Barang Ke Mahato 1,9jt, Dibayar 1jt, Sisanya Dari Bos', 1000000, 1, 'Cek Kwitansi', 'struk.png'),
-(295, '2021-02-14 00:00:00', 'k', 'Beli Paralon', 'Izan', 'Beli Paralon 2\"', 75000, 1, 'Cash', 'struk.png'),
-(296, '2021-02-14 00:00:00', 'k', 'Upah Muat', 'Ambik', 'Upah Muat Barang', 200000, 1, 'Cash', 'struk.png'),
-(297, '2021-02-14 00:00:00', 'k', 'Pengiriman Uang', 'Retno Hardiyanti', 'Kirim Uang Untuk ...', 7306500, 1, 'Via M-banking', 'struk.png'),
-(298, '2021-02-15 00:00:00', 'k', 'Pengiriman Uang', 'Sugiman', 'Pinjaman Uang Pekerjaan Bg Jon Dimahato', 7006500, 1, 'Via M-banking', 'struk.png'),
-(299, '2021-02-15 00:00:00', 'k', 'Pengiriman Uang', 'Sasni (ambik)', 'Bayar Hutang Makan Ambik Di Taluk + Uang Dari Bos 3jt', 4506500, 1, 'Via M-banking', 'struk.png'),
-(300, '2021-02-15 00:00:00', 'k', 'Beli Peyek', 'Izan', 'Beli Peyek Untuk Di Mobil Bos', 35000, 1, 'Cash', 'struk.png'),
-(301, '2021-02-16 00:00:00', 'k', 'Pemberian Uang', 'Pak Bos', 'Pemberian Uang Ke Bos', 5000000, 1, 'Cash', 'struk.png'),
-(302, '2021-02-16 00:00:00', 'k', 'Pengisian Token', 'Izan', 'Isi Token Kantor', 52000, 1, 'Cash', 'struk.png'),
-(303, '2021-02-16 00:00:00', 'k', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Untuk Nanang Di Concong', 2006500, 1, 'Via M-banking', 'struk.png'),
-(304, '2021-02-16 00:00:00', 'k', 'Pengiriman Uang', 'Rio Novingki', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(305, '2021-02-16 00:00:00', 'k', 'Pengiriman Uang', 'Radius', 'Kirim Uang Untuk ....', 2506500, 1, 'Via M-banking', 'struk.png'),
-(306, '2021-02-16 00:00:00', 'k', 'Pengiriman Uang', 'Hasnul Abdi', 'Kirim Uang Untuk Gaji Abdi', 756500, 1, 'Via M-banking', 'struk.png'),
-(307, '2021-02-16 00:00:00', 'k', 'Pengiriman Uang', 'Nur Imran', 'Kirim Uang Untuk Pinjaman Uang Sewa Rumah', 706500, 1, 'Via M-banking', 'struk.png'),
-(308, '2021-02-17 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(309, '2021-02-17 00:00:00', 'k', 'Pengiriman Uang', 'Sofia Dinata', 'Kirim Uang Untuk ....', 500000, 1, 'Via M-banking', 'struk.png'),
-(310, '2021-02-17 00:00:00', 'k', 'Pengiriman Uang', 'Cindy Amelia', 'Kirim Uang Untuk ....', 306500, 1, 'Via M-banking', 'struk.png'),
-(311, '2021-02-17 00:00:00', 'k', 'Biaya Adm', 'BCA', 'Biaya Adm Atm Otomatis', 20000, 1, 'Otomatis', 'struk.png'),
-(312, '2021-02-18 00:00:00', 'k', 'Pengiriman Uang', 'Andreas', 'Kirim Uang Untuk Bayar Material', 2335000, 1, 'Via M-banking', 'struk.png'),
-(313, '2021-02-18 00:00:00', 'k', 'Pengiriman Uang', 'Sasni', 'Pinjaman Uang Dialihkan Ke Pekerjaan Mahato', 1006500, 1, 'Via M-banking', 'struk.png'),
-(314, '2021-02-18 00:00:00', 'k', 'Pengiriman Uang', 'Toni Fikri', 'Kirim Uang Untuk Bayar Sorum Bg Siim, Sudah Dibayar Oleh Bg Si Im', 1000000, 1, 'Via M-banking', 'struk.png'),
-(315, '2021-02-18 00:00:00', 'k', 'Pengiriman Uang', 'Tri Andini', 'Kirim Uang Untuk ...', 1006500, 1, 'Via M-banking', 'struk.png'),
-(316, '2021-02-19 00:00:00', 'k', 'Pengiriman Uang', 'Madiono', 'Pinjaman Uang Pribadi', 4006500, 1, 'Via M-banking', 'struk.png'),
-(317, '2021-02-20 00:00:00', 'k', 'Pengisian Token', 'Izan', 'Isi Token Kantor', 203000, 1, 'Via M-banking', 'struk.png'),
-(318, '2021-02-20 00:00:00', 'k', 'Pembayaran Wifi', 'Izan', 'Bayar Wifi Kantor', 726000, 1, 'Cek Nota', 'struk.png'),
-(319, '2021-02-20 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Kantor Dan Beli Makan Kucing', 60000, 1, 'Cash', 'struk.png'),
-(320, '2021-02-20 00:00:00', 'k', 'Beli Galon', 'Izan', 'Beli Air Galon Untuk Kantor', 8000, 1, 'Cash', 'struk.png'),
-(321, '2021-02-20 00:00:00', 'k', 'Pengiriman Paket', 'Izan', 'Kirim Paket Berkas Ke Rengat', 25000, 1, 'Cek Nota', 'struk.png'),
-(322, '2021-02-21 00:00:00', 'k', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Ke Nanang Concong', 5006500, 1, 'Via M-banking', 'struk.png'),
-(323, '2021-02-21 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Kantor', 44000, 1, 'Cek Nota', 'struk.png'),
-(324, '2021-02-21 00:00:00', 'k', 'Admin Bank', 'Izan', 'Admin Bank Penarikan Uang + Parkir', 17000, 1, 'Cash', 'struk.png'),
-(325, '2021-02-21 00:00:00', 'k', 'Minum Bos', 'Izan', 'Beli Minum Bos Di Alfamart', 20000, 1, 'Cash', 'struk.png'),
-(326, '2021-02-21 00:00:00', 'k', 'Pengiriman Uang', 'Sugiman', 'Pinjaman Uang Bg Jon Untuk Pekerjaan Mahato', 15006500, 1, 'Via M-banking', 'struk.png'),
-(327, '2021-02-21 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 1006500, 1, 'Via M-banking', 'struk.png'),
-(328, '2021-02-21 00:00:00', 'k', 'Pengisian Token', 'Pak Bos', 'Isi Token Rumah Bos', 502500, 1, 'Via M-banking', 'struk.png'),
-(329, '2021-02-22 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ...', 1006500, 1, 'Via M-banking', 'struk.png'),
-(330, '2021-02-22 00:00:00', 'k', 'Pengiriman Uang', 'Saparrudin', 'Kirim Uang Untuk Pemberian Gudang PLN Dumai', 506500, 1, 'Via M-banking', 'struk.png'),
-(331, '2021-02-22 00:00:00', 'k', 'Pengiriman Uang', 'Nova Nurhaliza', 'Kirim Uang Untuk ...', 506500, 1, 'Via M-banking', 'struk.png'),
-(332, '2021-02-22 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Beli Energen, Aqua Gelas, Roti', 45000, 1, 'Cash', 'struk.png'),
-(333, '2021-02-23 00:00:00', 'k', 'Admin Bank', 'Izan', 'Admin Bank Penarikan Uang + Parkir', 12000, 1, 'Cash', 'struk.png'),
-(334, '2021-02-23 00:00:00', 'k', 'Pinjaman Uang', 'Nur Imran', 'Pinjaman Pribadi', 100000, 1, 'Cash', 'struk.png'),
-(335, '2021-02-23 00:00:00', 'k', 'Pinjaman Uang', 'Si Am', 'Pinjaman Pribadi', 50000, 1, 'Cash', 'struk.png'),
-(336, '2021-02-23 00:00:00', 'k', 'Pembayaran Fortuner', 'Pak Bos', 'Pembayaran Fortuner Via Debit Otomatis Atm', 4827400, 1, 'Via Debet Atm', 'struk.png'),
-(337, '2021-02-24 00:00:00', 'k', 'Pengiriman Uang', 'Sugiman', 'Kirim Uang Pinjaman Pekerjaan Mahato Jhon', 1006500, 1, 'Via M-banking', 'struk.png'),
-(338, '2021-02-24 00:00:00', 'k', 'Pengiriman Uang', 'Tri Andini', 'Kirim Uang Untuk ....', 356500, 1, 'Via M-banking', 'struk.png'),
-(339, '2021-02-24 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 1006500, 1, 'Via M-banking', 'struk.png'),
-(340, '2021-02-24 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 2006500, 1, 'Via M-banking', 'struk.png'),
-(341, '2021-02-24 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 506500, 1, 'Via M-banking', 'struk.png'),
-(342, '2021-02-25 00:00:00', 'k', 'Pengisian Token', 'Pak Bos', 'Isi Token Rumah Bos', 102500, 1, 'Via M-banking', 'struk.png'),
-(343, '2021-02-26 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 506500, 1, 'Via M-banking', 'struk.png'),
-(344, '2021-02-27 00:00:00', 'k', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Untuk Kerja Concong', 3006500, 1, 'Via M-banking', 'struk.png'),
-(345, '2021-02-27 00:00:00', 'k', 'Pengiriman Uang', 'Andreas', 'Bayar Hutang Material Di Sinar Lestari 27jt, 7jt Pakai Cek Bukopin', 20000000, 1, 'Via M-banking', 'struk.png'),
-(346, '2021-02-27 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(347, '2021-02-27 00:00:00', 'k', 'Pengiriman Uang', 'Adip', 'Pinjaman Uang Pribadi Pekerjaan Selat Panjang + Admin 3500', 5004500, 1, 'Via Ovo Izan', 'struk.png'),
-(348, '2021-02-27 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 506500, 1, 'Via M-banking', 'struk.png'),
-(349, '2021-02-27 00:00:00', 'k', 'Parkir Bank', 'Izan', 'Parkir Di 3  Bank + Sumbangan Bpk\"', 10000, 1, 'Cash', 'struk.png'),
-(350, '2021-02-27 00:00:00', 'k', 'Pengiriman Uang', 'Syafril', 'Bayar Hutang Bos Ke Pak Syafril + Admin Bank 5000', 15005000, 1, 'Via Transfer Bank', 'struk.png'),
-(351, '2021-02-27 00:00:00', 'k', 'Pengiriman Uang', 'Sukri', 'Bayar Sisa Kekurangan Bayar Tagihan Bos + Admin Bank 5000', 12005000, 1, 'Via Transfer Bank', 'struk.png'),
-(352, '2021-02-27 00:00:00', 'k', 'Bayar Hutang', 'Izan', 'Bayar Bon Beli Material Ditoko Intan', 1860000, 1, 'Cek Nota', 'struk.png'),
-(353, '2021-02-27 00:00:00', 'k', 'Pemberian Uang', 'Helviati', 'Pemberian Uang Pribadi', 1000000, 1, 'Cash', 'struk.png'),
-(354, '2021-02-27 00:00:00', 'k', 'Bayar Hutang Kedai', 'Izan', 'Bayar Hutang Kedai Depan', 100000, 1, 'Cash', 'struk.png'),
-(355, '2021-02-27 00:00:00', 'k', 'Bayara Hutang Kedai', 'Ambik', 'Bayar Hutang Ambik Dikedai Depan, Masuk Ke Pinjaman Pekerjaan Taluk', 800000, 1, 'Cash', 'struk.png'),
-(356, '2021-02-27 00:00:00', 'k', 'Bayar Angsuran', 'Izan', 'Bayar Angsuran Pick Up Grandmax', 2956000, 1, 'Cek Nota', 'struk.png'),
-(357, '2021-02-27 00:00:00', 'k', 'Pinjaman Uang', 'Nanang', 'Kirim Uang Menggunakan BRI Link Untuk Pekerjaan Concong', 4007000, 1, 'Cash', 'struk.png'),
-(358, '2021-02-27 00:00:00', 'k', 'Pengisian Pulsa', 'Nanang', 'Isi Pulsa Nanang', 52000, 1, 'Cash', 'struk.png'),
-(359, '2021-02-28 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya BRI', 306500, 1, 'Via M-banking', 'struk.png'),
-(360, '2021-02-28 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 4006500, 1, 'Via M-banking', 'struk.png'),
-(361, '2021-02-28 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya Bank Riau', 506500, 1, 'Via M-banking', 'struk.png'),
-(362, '2021-02-28 00:00:00', 'k', 'Pengiriman Uang', 'Alwis', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(363, '2021-03-01 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 16038262, 1, 'Sisa Kas Bulan Maret', 'struk.png'),
-(364, '2021-03-01 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 150000000, 1, 'Penarikan Di Bank Riau', 'struk.png'),
-(365, '2021-03-02 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 20000000, 1, 'Penarikan Di Bank Riau', 'struk.png'),
-(366, '2021-03-03 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 100000000, 1, 'Penarikan Di Bank Riau', 'struk.png'),
-(367, '2021-03-04 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 10000000, 1, 'Penarikan Dari Bank Bukopin', 'struk.png'),
-(368, '2021-03-05 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 25000000, 1, 'Kiriman Dari Bastra Kurnia', 'struk.png'),
-(369, '2021-03-06 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 20000000, 1, 'Penarikan Dari Bank Riau 14jt, Sisa Dari Bos', 'struk.png'),
-(370, '2021-03-07 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 30000000, 1, ' Uang Dari Koperasi PLN ', 'struk.png'),
-(371, '2021-03-08 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 5000000, 1, 'Penarikan Di Bank Bukopin', 'struk.png'),
-(372, '2021-03-09 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 15000000, 1, 'Penarikan Uang Di Bank Riau', 'struk.png'),
-(373, '2021-03-10 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 10000000, 1, 'Penarikan Uang Di Bank Riau', 'struk.png'),
-(374, '2021-03-11 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 83500000, 1, 'Penarikan Dari Bank Riau', 'struk.png'),
-(375, '2021-03-12 00:00:00', 'd', 'Penerimaan Uang Kas', '-', '-', 18000000, 1, 'Penarikan Dari Bank Riau', 'struk.png'),
-(376, '2021-03-01 00:00:00', 'k', 'Pengiriman Uang', 'Karmila', 'Kirim Uang Untuk Pekerjaan Selat Panjang', 100000000, 1, 'Cek Kwitansi', 'struk.png'),
-(377, '2021-03-01 00:00:00', 'k', 'Biaya Adm', 'Izan', 'Biaya Adm Bank Pengiriman Dan Penarikan Uang + Parkir X 2', 32000, 1, 'Cach', 'struk.png'),
-(378, '2021-03-01 00:00:00', 'k', 'Beli Materai', 'Izan', 'Beli Materai 6000 Se Papan', 300000, 1, 'Cash', 'struk.png'),
-(379, '2021-03-01 00:00:00', 'k', 'Beli Makan', 'Izan', 'Beli Makan Anggota', 20000, 1, 'Cash', 'struk.png'),
-(380, '2021-03-01 00:00:00', 'k', 'Beli Kue', 'Izan', 'Beli Kue Untuk Dikantor', 50000, 1, 'Cash', 'struk.png'),
-(381, '2021-03-01 00:00:00', 'k', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Untuk DL Di Tembilahan', 3500000, 1, 'Via M-banking', 'struk.png'),
-(382, '2021-03-01 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 2000000, 1, 'Via M-banking', 'struk.png'),
-(383, '2021-03-01 00:00:00', 'k', 'Pengiriman Uang', 'Madi', 'Kirim Uang Untuk Ke Gembira Dengan Rincian Pinjaman Ada Di Wa Izan', 9006500, 1, 'Via M-banking', 'struk.png'),
-(384, '2021-03-01 00:00:00', 'k', 'Pemberian Uang', 'Helpiati', 'Pemberian Uang Angsur Hutang Bos', 5000000, 1, 'Cash', 'struk.png'),
-(385, '2021-03-01 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Makanan Untuk Dikantor', 122500, 1, 'Cek Nota', 'struk.png'),
-(386, '2021-03-02 00:00:00', 'k', 'Pengiriman Uang', 'Rio Novingki', 'Ongkos Untuk Jemput Barang Di PLN Rengat', 806500, 1, 'Via M-banking', 'struk.png'),
-(387, '2021-03-02 00:00:00', 'k', 'Pengiriman Uang', 'Alwis', 'Kirim Uang Untuk Bayar Hutang Bos Ke Rusdi Karim', 18006500, 1, 'Via M-banking', 'struk.png'),
-(388, '2021-03-02 00:00:00', 'k', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Bos', 78000, 1, 'Via M-banking', 'struk.png'),
-(389, '2021-03-02 00:00:00', 'k', 'Pengiriman Uang', 'Afrida', 'Kirim Uang Untuk Pembayaran Beli Material', 15000000, 1, 'Via M-banking', 'struk.png'),
-(390, '2021-03-02 00:00:00', 'k', 'Pengiriman Uang', 'Sasni', 'Kirim Uang Untuk .....', 2006500, 1, 'Via M-banking', 'struk.png');
-INSERT INTO `tb_transaksi` (`kode`, `tanggal`, `jenis`, `uraian`, `penerima`, `kebutuhan`, `satuan`, `volume`, `keterangan`, `bukti_transaksi`) VALUES
-(391, '2021-03-02 00:00:00', 'k', 'Pengiriman Uang', 'Sofia Dinata', 'Kirim Uang Untuk Angsuran Hutang Bos', 3000000, 1, 'Via M-banking', 'struk.png'),
-(392, '2021-03-03 00:00:00', 'k', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Tambahan Untuk DL Di Tembilahan', 3000000, 1, 'Via M-banking', 'struk.png'),
-(393, '2021-03-03 00:00:00', 'k', 'Pengiriman Uang', 'Sugiman', 'Kirim Uang Pinjaman Pekerjaan Mahato Jhon', 10006500, 1, 'Via M-banking', 'struk.png'),
-(394, '2021-03-03 00:00:00', 'k', 'Pinjaman Uang', 'Ambik', 'Pinjaman Uang Untuk Pekerjaan Taluk Pada Tgl 02-04', 6000000, 1, 'Cek Kwitansi', 'struk.png'),
-(395, '2021-03-03 00:00:00', 'k', 'Biaya Adm', 'Izan', 'Biaya Adm Penarikan Uang Pada Tgl 02-04 + Parkir', 12000, 1, 'Cash', 'struk.png'),
-(396, '2021-03-03 00:00:00', 'k', 'Beli Tisu', 'Izan', 'Beli Tisu Untuk Dikantor', 40000, 1, 'Cash', 'struk.png'),
-(397, '2021-03-03 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Beli Atk Kantor', 41000, 1, 'Cek Nota', 'struk.png'),
-(398, '2021-03-03 00:00:00', 'k', 'Beli Map', 'Izan', 'Beli Map Dan Tinta Pena Untuk Bos', 15000, 1, 'Cash', 'struk.png'),
-(399, '2021-03-03 00:00:00', 'k', 'Pengiriman Uang', 'Heni', 'Kirim Uang Ke Anak Bos', 102500, 1, 'Via Ovo Izan', 'struk.png'),
-(400, '2021-03-03 00:00:00', 'k', 'Pengiriman Uang', 'Rio Novingki', 'Kirim Uang Untuk .....', 1056500, 1, 'Via M-banking', 'struk.png'),
-(401, '2021-03-03 00:00:00', 'k', 'Pengiriman Uang', 'Safri', 'Kirim Uang Untuk Angsur Hutang Bos', 5006500, 1, 'Via M-banking', 'struk.png'),
-(402, '2021-03-03 00:00:00', 'k', 'Pengiriman Uang', 'Mita Julia', 'Kirim Uang Untuk Heni', 106500, 1, 'Via M-banking', 'struk.png'),
-(403, '2021-03-04 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk .....', 806500, 1, 'Via M-banking', 'struk.png'),
-(404, '2021-03-04 00:00:00', 'k', 'Pengiriman Uang', 'Nova Nurhaliza', 'Kirim Uang Untuk .....', 156500, 1, 'Via M-banking', 'struk.png'),
-(405, '2021-03-04 00:00:00', 'k', 'Bayar Hutang Kedai', 'Izan', 'Bayar Hutang Kedai Depan 5 Hari', 203000, 1, 'Cash', 'struk.png'),
-(406, '2021-03-04 00:00:00', 'k', 'Beli Aqua Gelas', 'Izan', 'Beli Aqua Gelas Dan Rokok Bg Siam', 40000, 1, 'Cash', 'struk.png'),
-(407, '2021-03-05 00:00:00', 'k', 'Pengisian Token', 'Pak Bos', 'Isi Token Bos', 52500, 1, 'Via M-banking', 'struk.png'),
-(408, '2021-03-06 00:00:00', 'k', 'Pengisian Token', 'Izan', 'Isi Token Kantor', 22000, 1, 'Cash', 'struk.png'),
-(409, '2021-03-06 00:00:00', 'k', 'Pengisian Token', 'Izan', 'Tambah Isi Token Kantor', 203000, 1, 'Cash', 'struk.png'),
-(410, '2021-03-06 00:00:00', 'k', 'Parkir Bank', 'Izan', 'Uangnya Dikasih Ke Bg Siam', 5000, 1, 'Cash', 'struk.png'),
-(411, '2021-03-06 00:00:00', 'k', 'Pengsian Token', 'Pak Bos', 'Isi Token Rumah Bos', 503000, 1, 'Cash', 'struk.png'),
-(412, '2021-03-06 00:00:00', 'k', 'Pengiriman Uang', 'Suhermanto', 'Kirim Uang Untuk Pembelian Material Di Istana Baut', 5006500, 1, 'Via M-banking', 'struk.png'),
-(413, '2021-03-07 00:00:00', 'k', 'Pengiriman Uang', 'Alwis', 'Kirim Uang Untuk Pinjaman Pribadi', 12006500, 1, 'Via M-banking', 'struk.png'),
-(414, '2021-03-07 00:00:00', 'k', 'Pengiriman Uang', 'Helman', 'Kirim Uang Untuk Nanang Di Concong', 15000000, 1, 'Via M-banking', 'struk.png'),
-(415, '2021-03-07 00:00:00', 'k', 'Pengiriman Uang', 'Andreas', 'Kirim Uang Untuk Beli Material', 1852000, 1, 'Via M-banking', 'struk.png'),
-(416, '2021-03-07 00:00:00', 'k', 'Pemberian Uang', 'Andreas', 'Beli Material Yang Lain', 30000000, 1, 'Cek Nota', 'struk.png'),
-(417, '2021-03-07 00:00:00', 'k', 'Belanja Denok', 'Denok', 'Belanja Istri Bos', 400000, 1, 'Cash', 'struk.png'),
-(418, '2021-03-07 00:00:00', 'k', 'Beli Gas', 'Si Im', 'Beli Gas Untuk Rumah Bos', 100000, 1, 'Cash', 'struk.png'),
-(419, '2021-03-07 00:00:00', 'k', 'Pemberian Uang', 'Fery', 'DL Ke Dumai Dengan Bg Siam', 1500000, 1, 'Cash', 'struk.png'),
-(420, '2021-03-07 00:00:00', 'k', 'Upah Bongkar', 'Izan', 'Upah Bongkar Barang Dari Sinar Lestari', 200000, 1, 'Cash', 'struk.png'),
-(421, '2021-03-07 00:00:00', 'k', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Nelfon Bos', 65000, 1, 'Cash', 'struk.png'),
-(422, '2021-03-07 00:00:00', 'k', 'Gaji Karyawan', 'Izan', 'Gaji Karyawan Bulan Maret', 20022000, 1, 'Cash', 'struk.png'),
-(423, '2021-03-07 00:00:00', 'k', 'Ongkos Travel', 'Izan', 'Ongkos Travel Berkas Ke Rengat', 25000, 1, 'Cash', 'struk.png'),
-(424, '2021-03-07 00:00:00', 'k', 'Pengisian Pulsa', 'Izan', 'Pulsa Izan Bulan April', 52000, 1, 'Cash', 'struk.png'),
-(425, '2021-03-08 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk Ipat Sebagai Pinjaman', 3006500, 1, 'Via M-banking', 'struk.png'),
-(426, '2021-03-08 00:00:00', 'k', 'Pengiriman Uang', 'Helman', 'Kirim Uang Untuk .. (nanang)', 3000000, 1, 'Via M-banking', 'struk.png'),
-(427, '2021-03-08 00:00:00', 'k', 'Pengiriman Uang', 'Sri Wahyuningsih', 'Kirim Uang Untuk Ongkos Berangkat Anggota Ke Concong', 10006500, 1, 'Via M-banking', 'struk.png'),
-(428, '2021-03-08 00:00:00', 'k', 'Pengisian Pulsa', 'Fery', 'Pulsa Fery Bulan April', 52000, 1, 'Cash', 'struk.png'),
-(429, '2021-03-08 00:00:00', 'k', 'Pengiriman Uang', 'Riko', 'Kirim Uang Riko Yang Disetor Ke Bos', 606500, 1, 'Via M-banking', 'struk.png'),
-(430, '2021-03-09 00:00:00', 'k', 'Uang DL', 'Izan', 'Uang DL Izan Ke Taluk 2 Hari', 1070000, 1, 'Cek Kwitansi', 'struk.png'),
-(431, '2021-03-09 00:00:00', 'k', 'Pengiriman Uang', 'Fery', 'Kirim Uang Tambahan Untuk DL Di Dumai', 506500, 1, 'Via M-banking', 'struk.png'),
-(432, '2021-03-09 00:00:00', 'k', 'Beli Kue', 'Pak Bos', 'Beli Kue Di Vanholland Pakai Debit Kartu Atm', 117040, 1, 'Via Debet Atm', 'struk.png'),
-(433, '2021-03-09 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 500000, 1, 'Cash', 'struk.png'),
-(434, '2021-03-10 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 500000, 1, 'Cash', 'struk.png'),
-(435, '2021-03-10 00:00:00', 'k', 'Pengiriman Uang', 'Helman (nanang)', 'Kirim Uang Untuk Nanang Di Concong', 5500000, 1, 'Via M-banking', 'struk.png'),
-(436, '2021-03-10 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 1000000, 1, 'Cash', 'struk.png'),
-(437, '2021-03-10 00:00:00', 'k', 'Pengiriman Uang', 'Fery', 'Kirim Uang Tambahan Untuk DL Di Dumai', 1006500, 1, 'Via M-banking', 'struk.png'),
-(438, '2021-03-10 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 5000000, 1, 'Cash', 'struk.png'),
-(439, '2021-03-10 00:00:00', 'k', 'Pengiriman Uang', 'Roni Suprianto', 'Kirim Uang Untuk Satpam Perumahan Bos', 256500, 1, 'Via M-banking', 'struk.png'),
-(440, '2021-03-11 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Energen, Kopi Dan Lainnya', 50000, 1, 'Cash', 'struk.png'),
-(441, '2021-03-11 00:00:00', 'k', 'Makan Lembur', 'Izan', 'Makan Lembur Karyawan Dengan Bg Siam', 30000, 1, 'Cash', 'struk.png'),
-(442, '2021-03-11 00:00:00', 'k', 'Belanja Denok', 'Denok', 'Belanja Denok Dipasar Buah', 392000, 1, 'Cek Nota', 'struk.png'),
-(443, '2021-03-11 00:00:00', 'k', 'Pemberian Uang', 'Pak Bos', 'Beri Uang Ke Bos', 600000, 1, 'Cash', 'struk.png'),
-(444, '2021-03-11 00:00:00', 'k', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Bos', 151500, 1, 'Via M-banking', 'struk.png'),
-(445, '2021-03-11 00:00:00', 'k', 'Pengiriman Uang', 'Nur Imran', 'Kirim Uang Untuk Antar Orang Ke Concong', 2006500, 1, 'Via M-banking', 'struk.png'),
-(446, '2021-03-11 00:00:00', 'k', 'Pengisian Pulsa', 'Pak Bos', 'Isi Pulsa Bos', 78000, 1, 'Via M-banking', 'struk.png'),
-(447, '2021-03-11 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Pinjaman Uang Untuk .....', 1506500, 1, 'Via M-banking', 'struk.png'),
-(448, '2021-03-11 00:00:00', 'k', 'Pengiriman Uang', 'Nur Imran', 'Tambahan Kirim Uang Untuk Di Concong', 506500, 1, 'Via M-banking', 'struk.png'),
-(449, '2021-03-11 00:00:00', 'k', 'Pengiriman Uang', 'Helman (nanang)', 'Kirim Uang Untuk Di Concong', 3000000, 1, 'Via M-banking', 'struk.png'),
-(450, '2021-03-11 00:00:00', 'k', 'Penarikan Uang', 'Pak Bos', 'Tarek Uang Atm', 1000000, 1, 'Cash', 'struk.png'),
-(451, '2021-03-11 00:00:00', 'k', 'Pengiriman Uang', 'Elysa Evanawi', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(452, '2021-03-12 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Kantor', 104000, 1, 'Cash', 'struk.png'),
-(453, '2021-03-12 00:00:00', 'k', 'Pengiriman Uang', 'Syafrizal', 'Kirim Uang Untuk Bayar Hutang Bos (masih Ragu)', 1006500, 1, 'Via M-banking', 'struk.png'),
-(454, '2021-03-12 00:00:00', 'k', 'Pengiriman Uang', 'Fery', 'Kirim Uang Untuk Tambahan DL Di Dumai', 306500, 1, 'Via M-banking', 'struk.png'),
-(455, '2021-03-12 00:00:00', 'k', 'Pengiriman Uang', 'Mariatun', 'Kirim Uang Untuk Pengeluaran Denok', 100000, 1, 'Via M-banking', 'struk.png'),
-(456, '2021-03-12 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Ke Rekening Bank Riau Bos', 1006500, 1, 'Via M-banking', 'struk.png'),
-(457, '2021-03-13 00:00:00', 'k', 'Bayar Wifi Bos', 'Izan', 'Bayar Wifi Rumah Bos', 350000, 1, 'Cek Nota', 'struk.png'),
-(458, '2021-03-13 00:00:00', 'k', 'Bayar Hutang Kedai', 'Izan', 'Bayar Hutang Kedai Depan 9 Hari', 330000, 1, 'Cash', 'struk.png'),
-(459, '2021-03-13 00:00:00', 'k', 'Pengiriman Uang', 'Nurhasyim', 'Kirim Uang Untuk ....', 506500, 1, 'Via M-banking', 'struk.png'),
-(460, '2021-03-13 00:00:00', 'k', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Untuk DL Ke Taluk', 1000000, 1, 'Via M-banking', 'struk.png'),
-(461, '2021-03-13 00:00:00', 'k', 'Pengiriman Uang', 'Nurhasyim', 'Kirim Uang Untuk ....', 506500, 1, 'Via M-banking', 'struk.png'),
-(462, '2021-03-13 00:00:00', 'k', 'Pengiriman Uang', 'Andreas', 'Kirim Uang Untuk Bayar Kekurangan Beli Material', 335000, 1, 'Via M-banking', 'struk.png'),
-(463, '2021-03-14 00:00:00', 'k', 'Minum Bos', 'Pak Bos', 'Minum Bos', 13000, 1, 'Cash1161500', 'struk.png'),
-(464, '2021-03-14 00:00:00', 'k', 'Beli Masker', 'Pak Bos', 'Beli Masker Untuk Bso', 65000, 1, 'Cash', 'struk.png'),
-(465, '2021-03-14 00:00:00', 'k', 'Pemberian Uang', 'Nur Imran', 'Bayar Kekurang Uang Beli Material Di Istana Baut', 10000, 1, 'Cash', 'struk.png'),
-(466, '2021-03-14 00:00:00', 'k', 'Biaya Adm', 'Izan', 'Bayar Hutang Biaya Adm Ke Bank Riau 25000 + 10000', 35000, 1, 'Cash', 'struk.png'),
-(467, '2021-03-14 00:00:00', 'k', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Untuk Nanang Di Concong', 506500, 1, 'Via M-banking', 'struk.png'),
-(468, '2021-03-14 00:00:00', 'k', 'Parkir Bank', 'Izan', 'Bayar Parkir Bank 2x', 2, 1, 'Cash', 'struk.png'),
-(469, '2021-03-14 00:00:00', 'k', 'Servis Mobil', 'Pak Bos', 'Servis Mobil Bos', 830000, 1, 'Via M-banking', 'struk.png'),
-(470, '2021-03-14 00:00:00', 'k', 'Ongkos Barang', 'Izan', 'Ongkos Mobil Antar Barang Ke Mahato 1,9jt, Dibayar 1jt, Sisanya Dari Bos', 1000000, 1, 'Cek Kwitansi', 'struk.png'),
-(471, '2021-03-14 00:00:00', 'k', 'Beli Paralon', 'Izan', 'Beli Paralon 2\"', 75000, 1, 'Cash', 'struk.png'),
-(472, '2021-03-14 00:00:00', 'k', 'Upah Muat', 'Ambik', 'Upah Muat Barang', 200000, 1, 'Cash', 'struk.png'),
-(473, '2021-03-14 00:00:00', 'k', 'Pengiriman Uang', 'Retno Hardiyanti', 'Kirim Uang Untuk ...', 7306500, 1, 'Via M-banking', 'struk.png'),
-(474, '2021-03-15 00:00:00', 'k', 'Pengiriman Uang', 'Sugiman', 'Pinjaman Uang Pekerjaan Bg Jon Dimahato', 7006500, 1, 'Via M-banking', 'struk.png'),
-(475, '2021-03-15 00:00:00', 'k', 'Pengiriman Uang', 'Sasni (ambik)', 'Bayar Hutang Makan Ambik Di Taluk + Uang Dari Bos 3jt', 4506500, 1, 'Via M-banking', 'struk.png'),
-(476, '2021-03-15 00:00:00', 'k', 'Beli Peyek', 'Izan', 'Beli Peyek Untuk Di Mobil Bos', 35000, 1, 'Cash', 'struk.png'),
-(477, '2021-03-16 00:00:00', 'k', 'Pemberian Uang', 'Pak Bos', 'Pemberian Uang Ke Bos', 5000000, 1, 'Cash', 'struk.png'),
-(478, '2021-03-16 00:00:00', 'k', 'Pengisian Token', 'Izan', 'Isi Token Kantor', 52000, 1, 'Cash', 'struk.png'),
-(479, '2021-03-16 00:00:00', 'k', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Untuk Nanang Di Concong', 2006500, 1, 'Via M-banking', 'struk.png'),
-(480, '2021-03-16 00:00:00', 'k', 'Pengiriman Uang', 'Rio Novingki', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(481, '2021-03-16 00:00:00', 'k', 'Pengiriman Uang', 'Radius', 'Kirim Uang Untuk ....', 2506500, 1, 'Via M-banking', 'struk.png'),
-(482, '2021-03-16 00:00:00', 'k', 'Pengiriman Uang', 'Hasnul Abdi', 'Kirim Uang Untuk Gaji Abdi', 756500, 1, 'Via M-banking', 'struk.png'),
-(483, '2021-03-16 00:00:00', 'k', 'Pengiriman Uang', 'Nur Imran', 'Kirim Uang Untuk Pinjaman Uang Sewa Rumah', 706500, 1, 'Via M-banking', 'struk.png'),
-(484, '2021-03-17 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(485, '2021-03-17 00:00:00', 'k', 'Pengiriman Uang', 'Sofia Dinata', 'Kirim Uang Untuk ....', 500000, 1, 'Via M-banking', 'struk.png'),
-(486, '2021-03-17 00:00:00', 'k', 'Pengiriman Uang', 'Cindy Amelia', 'Kirim Uang Untuk ....', 306500, 1, 'Via M-banking', 'struk.png'),
-(487, '2021-03-17 00:00:00', 'k', 'Biaya Adm', 'BCA', 'Biaya Adm Atm Otomatis', 20000, 1, 'Otomatis', 'struk.png'),
-(488, '2021-03-18 00:00:00', 'k', 'Pengiriman Uang', 'Andreas', 'Kirim Uang Untuk Bayar Material', 2335000, 1, 'Via M-banking', 'struk.png'),
-(489, '2021-03-18 00:00:00', 'k', 'Pengiriman Uang', 'Sasni', 'Pinjaman Uang Dialihkan Ke Pekerjaan Mahato', 1006500, 1, 'Via M-banking', 'struk.png'),
-(490, '2021-03-18 00:00:00', 'k', 'Pengiriman Uang', 'Toni Fikri', 'Kirim Uang Untuk Bayar Sorum Bg Siim, Sudah Dibayar Oleh Bg Si Im', 1000000, 1, 'Via M-banking', 'struk.png'),
-(491, '2021-03-18 00:00:00', 'k', 'Pengiriman Uang', 'Tri Andini', 'Kirim Uang Untuk ...', 1006500, 1, 'Via M-banking', 'struk.png'),
-(492, '2021-03-19 00:00:00', 'k', 'Pengiriman Uang', 'Madiono', 'Pinjaman Uang Pribadi', 4006500, 1, 'Via M-banking', 'struk.png'),
-(493, '2021-03-20 00:00:00', 'k', 'Pengisian Token', 'Izan', 'Isi Token Kantor', 203000, 1, 'Via M-banking', 'struk.png'),
-(494, '2021-03-20 00:00:00', 'k', 'Pembayaran Wifi', 'Izan', 'Bayar Wifi Kantor', 726000, 1, 'Cek Nota', 'struk.png'),
-(495, '2021-03-20 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Kantor Dan Beli Makan Kucing', 60000, 1, 'Cash', 'struk.png'),
-(496, '2021-03-20 00:00:00', 'k', 'Beli Galon', 'Izan', 'Beli Air Galon Untuk Kantor', 8000, 1, 'Cash', 'struk.png'),
-(497, '2021-03-20 00:00:00', 'k', 'Pengiriman Paket', 'Izan', 'Kirim Paket Berkas Ke Rengat', 25000, 1, 'Cek Nota', 'struk.png'),
-(498, '2021-03-21 00:00:00', 'k', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Ke Nanang Concong', 5006500, 1, 'Via M-banking', 'struk.png'),
-(499, '2021-03-21 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Belanja Kantor', 44000, 1, 'Cek Nota', 'struk.png'),
-(500, '2021-03-21 00:00:00', 'k', 'Admin Bank', 'Izan', 'Admin Bank Penarikan Uang + Parkir', 17000, 1, 'Cash', 'struk.png'),
-(501, '2021-03-21 00:00:00', 'k', 'Minum Bos', 'Izan', 'Beli Minum Bos Di Alfamart', 20000, 1, 'Cash', 'struk.png'),
-(502, '2021-03-21 00:00:00', 'k', 'Pengiriman Uang', 'Sugiman', 'Pinjaman Uang Bg Jon Untuk Pekerjaan Mahato', 15006500, 1, 'Via M-banking', 'struk.png'),
-(503, '2021-03-21 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 1006500, 1, 'Via M-banking', 'struk.png'),
-(504, '2021-03-21 00:00:00', 'k', 'Pengisian Token', 'Pak Bos', 'Isi Token Rumah Bos', 502500, 1, 'Via M-banking', 'struk.png'),
-(505, '2021-03-22 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ...', 1006500, 1, 'Via M-banking', 'struk.png'),
-(506, '2021-03-22 00:00:00', 'k', 'Pengiriman Uang', 'Saparrudin', 'Kirim Uang Untuk Pemberian Gudang PLN Dumai', 506500, 1, 'Via M-banking', 'struk.png'),
-(507, '2021-03-22 00:00:00', 'k', 'Pengiriman Uang', 'Nova Nurhaliza', 'Kirim Uang Untuk ...', 506500, 1, 'Via M-banking', 'struk.png'),
-(508, '2021-03-22 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Beli Energen, Aqua Gelas, Roti', 45000, 1, 'Cash', 'struk.png'),
-(509, '2021-03-23 00:00:00', 'k', 'Admin Bank', 'Izan', 'Admin Bank Penarikan Uang + Parkir', 12000, 1, 'Cash', 'struk.png'),
-(510, '2021-03-23 00:00:00', 'k', 'Pinjaman Uang', 'Nur Imran', 'Pinjaman Pribadi', 100000, 1, 'Cash', 'struk.png'),
-(511, '2021-03-23 00:00:00', 'k', 'Pinjaman Uang', 'Si Am', 'Pinjaman Pribadi', 50000, 1, 'Cash', 'struk.png'),
-(512, '2021-03-23 00:00:00', 'k', 'Pembayaran Fortuner', 'Pak Bos', 'Pembayaran Fortuner Via Debit Otomatis Atm', 4827400, 1, 'Via Debet Atm', 'struk.png'),
-(513, '2021-03-24 00:00:00', 'k', 'Pengiriman Uang', 'Sugiman', 'Kirim Uang Pinjaman Pekerjaan Mahato Jhon', 1006500, 1, 'Via M-banking', 'struk.png'),
-(514, '2021-03-24 00:00:00', 'k', 'Pengiriman Uang', 'Tri Andini', 'Kirim Uang Untuk ....', 356500, 1, 'Via M-banking', 'struk.png'),
-(515, '2021-03-24 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 1006500, 1, 'Via M-banking', 'struk.png'),
-(516, '2021-03-24 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 2006500, 1, 'Via M-banking', 'struk.png'),
-(517, '2021-03-24 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 506500, 1, 'Via M-banking', 'struk.png'),
-(518, '2021-03-25 00:00:00', 'k', 'Pengisian Token', 'Pak Bos', 'Isi Token Rumah Bos', 102500, 1, 'Via M-banking', 'struk.png'),
-(519, '2021-03-26 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 506500, 1, 'Via M-banking', 'struk.png'),
-(520, '2021-03-27 00:00:00', 'k', 'Pengiriman Uang', 'Nanang', 'Kirim Uang Untuk Kerja Concong', 3006500, 1, 'Via M-banking', 'struk.png'),
-(521, '2021-03-27 00:00:00', 'k', 'Pengiriman Uang', 'Andreas', 'Bayar Hutang Material Di Sinar Lestari 27jt, 7jt Pakai Cek Bukopin', 20000000, 1, 'Via M-banking', 'struk.png'),
-(522, '2021-03-27 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(523, '2021-03-27 00:00:00', 'k', 'Pengiriman Uang', 'Adip', 'Pinjaman Uang Pribadi Pekerjaan Selat Panjang + Admin 3500', 5004500, 1, 'Via Ovo Izan', 'struk.png'),
-(524, '2021-03-27 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya', 506500, 1, 'Via M-banking', 'struk.png'),
-(525, '2021-03-27 00:00:00', 'k', 'Parkir Bank', 'Izan', 'Parkir Di 3  Bank + Sumbangan Bpk\"', 10000, 1, 'Cash', 'struk.png'),
-(526, '2021-03-27 00:00:00', 'k', 'Pengiriman Uang', 'Syafril', 'Bayar Hutang Bos Ke Pak Syafril + Admin Bank 5000', 15005000, 1, 'Via Transfer Bank', 'struk.png'),
-(527, '2021-03-27 00:00:00', 'k', 'Pengiriman Uang', 'Sukri', 'Bayar Sisa Kekurangan Bayar Tagihan Bos + Admin Bank 5000', 12005000, 1, 'Via Transfer Bank', 'struk.png'),
-(528, '2021-03-27 00:00:00', 'k', 'Bayar Hutang', 'Izan', 'Bayar Bon Beli Material Ditoko Intan', 1860000, 1, 'Cek Nota', 'struk.png'),
-(529, '2021-03-27 00:00:00', 'k', 'Pemberian Uang', 'Helviati', 'Pemberian Uang Pribadi', 1000000, 1, 'Cash', 'struk.png'),
-(530, '2021-03-27 00:00:00', 'k', 'Bayar Hutang Kedai', 'Izan', 'Bayar Hutang Kedai Depan', 100000, 1, 'Cash', 'struk.png'),
-(531, '2021-03-27 00:00:00', 'k', 'Bayara Hutang Kedai', 'Ambik', 'Bayar Hutang Ambik Dikedai Depan, Masuk Ke Pinjaman Pekerjaan Taluk', 800000, 1, 'Cash', 'struk.png'),
-(532, '2021-03-27 00:00:00', 'k', 'Bayar Angsuran', 'Izan', 'Bayar Angsuran Pick Up Grandmax', 2956000, 1, 'Cek Nota', 'struk.png'),
-(533, '2021-03-27 00:00:00', 'k', 'Pinjaman Uang', 'Nanang', 'Kirim Uang Menggunakan BRI Link Untuk Pekerjaan Concong', 4007000, 1, 'Cash', 'struk.png'),
-(534, '2021-03-27 00:00:00', 'k', 'Pengisian Pulsa', 'Nanang', 'Isi Pulsa Nanang', 52000, 1, 'Cash', 'struk.png'),
-(535, '2021-03-28 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya BRI', 306500, 1, 'Via M-banking', 'struk.png'),
-(536, '2021-03-28 00:00:00', 'k', 'Pengiriman Uang', 'Alfatmi', 'Kirim Uang Untuk ....', 4006500, 1, 'Via M-banking', 'struk.png'),
-(537, '2021-03-28 00:00:00', 'k', 'Pengiriman Uang', 'Pak Bos', 'Kirim Uang Ke Rekening Bos Lainnya Bank Riau', 506500, 1, 'Via M-banking', 'struk.png'),
-(538, '2021-03-28 00:00:00', 'k', 'Pengiriman Uang', 'Alwis', 'Kirim Uang Untuk ....', 1006500, 1, 'Via M-banking', 'struk.png'),
-(539, '2021-03-29 00:00:00', 'k', 'Pengiriman Uang', 'Riyan', 'Kirim Uang Untuk DL Ke Dumai', 1000000, 1, 'Via M-banking', 'struk.png'),
-(540, '2021-03-29 00:00:00', 'k', 'Pinjaman Uang', 'Ambik', 'Pinjaman Uang Sama Bos', 300000, 1, 'Cash', 'struk.png'),
-(541, '2021-03-29 00:00:00', 'k', 'Pengiriman Uang', 'Batam Jaya Elek', 'Pengeluaran Beli Elektronik Bos', 2455500, 1, 'Via M-banking', 'struk.png'),
-(542, '2021-03-29 00:00:00', 'k', 'Pengiriman Uang', 'Nova Nurhaliza', 'Kirim Uang Untuk Pemberian Ke Istri Bg Siam', 306500, 1, 'Via M-banking', 'struk.png'),
-(543, '2021-03-30 00:00:00', 'k', 'Biaya Adm', 'Izan', 'Biaya Admin Bank + Parkir', 11000, 1, 'Cash', 'struk.png'),
-(544, '2021-03-30 00:00:00', 'k', 'Pengiriman Uang', 'Safri', 'Pengiriman Uang Untuk Pelunasan Biaya Cor Tiang Di Gembira, Hutang Bos 10,4jt. Untuk Perhitungan Akan Ditanyakan Kembali, Apakah 6jt Dipakai Beli Pompong Dan 4jt Untuk Kerja Baru', 10006500, 1, 'Via M-banking', 'struk.png'),
-(545, '2021-03-30 00:00:00', 'k', 'Pengiriman Uang', 'Nanda', 'Kirim Uang Untuk Bayar Upah Bikin Dan Bayar SPT Tahunan', 1106500, 1, 'Via M-banking', 'struk.png'),
-(546, '2021-03-30 00:00:00', 'k', 'Pengiriman Uang', 'Sasni', 'Pinjaman Uang Pribadi', 5006500, 1, 'Via M-banking', 'struk.png'),
-(547, '2021-03-30 00:00:00', 'k', 'Belanja Kantor', 'Izan', 'Beli Sapu Dan Buku Besar Untuk Dikantor', 36000, 1, 'Cash', 'struk.png'),
-(548, '2021-03-30 00:00:00', 'k', 'Pemberian Uang', 'Ican', 'Ambil Uang Pinjaman Yg Dialihkan Ke Pekerjaan Mahato (pinjaman Dipotong Ke Bg Jon)', 200000, 1, 'Cash', 'struk.png');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_user`
+-- Table structure for table `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -846,84 +105,82 @@ CREATE TABLE `tb_user` (
   `role_id` int(11) NOT NULL,
   `is_active` int(1) NOT NULL,
   `date_created` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data untuk tabel `tb_user`
+-- Dumping data for table `tb_user`
 --
 
 INSERT INTO `tb_user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(17, 'M Donny Irwansyah', 'pimpinan@gmail.com', 'default.png', '$2y$10$So6N8mwoEwyAzvbHadSSruiK9WX7QKOTLdFBrs0x0zPkQ6DWlCvKy', 1, 1, 1600924469),
-(27, 'M Donny', '11850310472@students.uin-suska.ac.id', 'default.png', '$2y$10$r784ujlzGKw.DFAcQOquz.0s0IeRNdJ/2NEKv9U7qxcC/SSMQW9Ue', 2, 1, 1609682077),
-(33, 'Hanas', 'irwansyah.jr77@gmail.com', 'default.png', '$2y$10$kynkNzkdMhGEWL5MFMDRouCwjtGzHwbgjdzV1LIJY5HvIih3Hen0.', 2, 1, 1611593879);
+(17, 'M Donny Irwansyah', 'pimpinan@gmail.com', 'default.png', '$2y$10$So6N8mwoEwyAzvbHadSSruiK9WX7QKOTLdFBrs0x0zPkQ6DWlCvKy', 1, 1, 1600924469);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tb_pembayaranspbj`
+-- Indexes for table `tb_pembayaranspbj`
 --
 ALTER TABLE `tb_pembayaranspbj`
   ADD PRIMARY KEY (`kode`);
 
 --
--- Indeks untuk tabel `tb_pengeluaranbos`
+-- Indexes for table `tb_pengeluaranbos`
 --
 ALTER TABLE `tb_pengeluaranbos`
   ADD PRIMARY KEY (`kode`);
 
 --
--- Indeks untuk tabel `tb_token`
+-- Indexes for table `tb_token`
 --
 ALTER TABLE `tb_token`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_transaksi`
+-- Indexes for table `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
   ADD PRIMARY KEY (`kode`);
 
 --
--- Indeks untuk tabel `tb_user`
+-- Indexes for table `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pembayaranspbj`
+-- AUTO_INCREMENT for table `tb_pembayaranspbj`
 --
 ALTER TABLE `tb_pembayaranspbj`
-  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pengeluaranbos`
+-- AUTO_INCREMENT for table `tb_pengeluaranbos`
 --
 ALTER TABLE `tb_pengeluaranbos`
-  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_token`
+-- AUTO_INCREMENT for table `tb_token`
 --
 ALTER TABLE `tb_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_transaksi`
+-- AUTO_INCREMENT for table `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=552;
+  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_user`
+-- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
